@@ -1,0 +1,3 @@
+[submodule "plugins/jekyll-org"]
+	path = plugins/jekyll-org
+	url = http://github.com/eggcaker/jekyll-org.git
