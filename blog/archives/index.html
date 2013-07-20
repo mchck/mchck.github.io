@@ -5,11 +5,13 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Blog Archive - My Octopress Blog</title>
-  <meta name="author" content="Your Name">
+  <title>Blog Archive - MC HCK - A $5 ARM development board</title>
+  <meta name="author" content="Simon Schubert and the MC HCK project">
 
   
-  <meta name="description" content=" Blog Archive Recent Posts ">
+  <meta name="description" content="Blog Archive 2013 First parts for prototypes
+Jul 19 2013 Prototypes Available
+Jun 25 2013 Recent Posts First Parts for Prototypes Prototypes &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -21,7 +23,7 @@
   <link rel="canonical" href="http://mchck.github.io/blog/archives">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
-  <link href="/atom.xml" rel="alternate" title="My Octopress Blog" type="application/atom+xml">
+  <link href="/atom.xml" rel="alternate" title="MC HCK - A $5 ARM development board" type="application/atom+xml">
   <script src="/javascripts/modernizr-2.0.js"></script>
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/lib/jquery.min.js"%3E%3C/script%3E'))</script>
@@ -36,9 +38,9 @@
 
 <body   >
   <header role="banner"><hgroup>
-  <h1><a href="/">My Octopress Blog</a></h1>
+  <h1><a href="/">MC HCK - A $5 ARM development board</a></h1>
   
-    <h2>A blogging framework for hackers.</h2>
+    <h2>small. cheap. powerful. open source.</h2>
   
 </hgroup>
 
@@ -73,6 +75,29 @@
   
   <div id="blog-archives">
 
+
+
+  
+  <h2>2013</h2>
+
+<article>
+  
+<h1><a href="/blog/2013/07/19/First-parts-for-prototypes/">First parts for prototypes</a></h1>
+<time datetime="2013-07-19T00:00:00+02:00" pubdate><span class='month'>Jul</span> <span class='day'>19</span> <span class='year'>2013</span></time>
+
+
+</article>
+
+
+
+<article>
+  
+<h1><a href="/blog/2013/06/25/Prototypes-Available/">Prototypes Available</a></h1>
+<time datetime="2013-06-25T00:00:00+02:00" pubdate><span class='month'>Jun</span> <span class='day'>25</span> <span class='year'>2013</span></time>
+
+
+</article>
+
 </div>
 
   
@@ -86,7 +111,45 @@
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
     
+      <li class="post">
+        <a href="/blog/2013/07/19/First-parts-for-prototypes/">First Parts for Prototypes</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/06/25/Prototypes-Available/">Prototypes Available</a>
+      </li>
+    
   </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/mchck">@mchck</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'mchck',
+            count: 0,
+            skip_forks: true,
+            skip_repos: ["mchck.github.io"],
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
 </section>
 
 
@@ -100,7 +163,7 @@
     </div>
   </div>
   <footer role="contentinfo"><p>
-  Copyright &copy; 2013 - Your Name -
+  Copyright &copy; 2013 - Simon Schubert and the MC HCK project -
   <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
 </p>
 

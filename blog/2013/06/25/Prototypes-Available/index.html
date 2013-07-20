@@ -1,0 +1,286 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Prototypes Available - MC HCK - A $5 ARM development board</title>
+  <meta name="author" content="Simon Schubert and the MC HCK project">
+
+  
+  <meta name="description" content="We are happy to be able to announce the first prototype MC HCK dev kits. These prototype kits are meant for early adopters, who would like to &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://mchck.github.io/blog/2013/06/25/Prototypes-Available">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="MC HCK - A $5 ARM development board" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/lib/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">MC HCK - A $5 ARM development board</a></h1>
+  
+    <h2>small. cheap. powerful. open source.</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:mchck.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Prototypes Available</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-06-25T00:00:00+02:00" pubdate data-updated="true">Jun 25<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>We are happy to be able to announce the first prototype MC HCK dev
+  kits.  These prototype kits are meant for early adopters, who would
+  like to evaluate and verify the electrical design of the MC HCK, and
+  those who want to contribute to the growing software library.</p>
+<!-- more -->
+<p>During the past months of silence, several things have ripened to
+  usefulness:</p>
+<p>We&#8217;ve created a bootloader that allows firmware updates via USB; this
+  means that the MC HCK can be programmed without additional programming
+  adapters.  This also confirms that the MC HCK is definitely usable in
+  its most basic form.</p>
+<p>Additionally, using our custom SWD toolchain, it is possible to debug
+  code on the MC HCK using gdb.  The toolchain currently supports the
+  Bus Blaster and Bus Pirate boards as SWD adapters, but native
+  MC HCK &lt;-&gt; MC HCK SWD debug support is underway.</p>
+<p>The prototype kits will come in parts (not assembled) and will contain
+  the following components:</p>
+<ul>
+  <li>5x MCU (pre-programmed with USB bootloader)</li>
+  <li>5x boards (2.0 mm, direct USB pluggable)</li>
+  <li>1x discretes for all parts</li>
+  <li>2x NRF24L01+ RF board</li>
+  <li>2x MCP73831T-2ACI LiPo charger IC</li>
+  <li>2x 180mAh LiPo battery</li>
+  <li>2x W25Q80BV 1MB SPI flash</li>
+  <li>1x MIC5205-3.3 16V LDO</li>
+  <li>1x LM3671MF-3.3 buck IC</li>
+  <li>1x TPS61097-33 boost IC</li>
+  <li>2x Micro-USB AB receptacles</li>
+  <li>3x 32.768kHz RTC XTAL</li>
+</ul>
+<p>This allows you to build 5 standard MC HCKs, and run RF
+  communications, autonomous nodes, log large amounts of data, and run
+  from a variety of power sources.  Not all of these options have been
+  verified to work yet, but that&#8217;s what this prototype kit is for.</p>
+<p>The price of the prototype kit will be $60, and will include PayPal
+  fee and international shipping, either from Switzerland or the
+  European Union (your choice).  The total cost calculation can be found
+  at <a href="Prototypes">Prototypes</a>.</p>
+<p>To get to this price level, we need to purchase parts for 50 kits, and
+  also sell 50 kits.</p>
+<p>This is where we need your support:  We need 40 brave supporters, who
+  will commit to buying each a prototype kit (ask your friends and
+  hackspace!), and ideally transfer the money ahead of time.  Simon is personally
+  prepared to eat the cost for up to 10 kits, should we not manage to
+  find 50 buyers.</p>
+<p>Due to IC factory lead times, we expect the kits to ship end of August.</p>
+<p>You can directly commit to buying one prototype kit using the
+  following links;  please leave your correct shipping information and
+  email address, and make sure the receiving party ID is Simon, 2@0x2c.org.</p>
+<ul>
+  <li><a href="https://www.paypal.com/cgi-bin/webscr?cmd%3D_xclick&amp;business%3DCCTESJYV55TTQ&amp;lc%3DCH&amp;item_name%3DMC%2BHCK%2Bprototype%2Bkit%2B(USD)&amp;amount%3D60.00&amp;currency_code%3DUSD&amp;button_subtype%3Dservices&amp;bn%3DPP-BuyNowBF:btn_buynowCC_LG.gif:NonHosted">$60, PayPal, USD</a></li>
+  <li><a href="https://www.paypal.com/cgi-bin/webscr?cmd%3D_xclick&amp;business%3DCCTESJYV55TTQ&amp;lc%3DCH&amp;item_name%3DMC%2BHCK%2Bprototype%2Bkit%2B(EUR)&amp;amount%3D46.00&amp;currency_code%3DEUR&amp;button_subtype%3Dservices&amp;bn%3DPP-BuyNowBF:btn_buynowCC_LG.gif:NonHosted">€46, PayPal, EUR</a></li>
+</ul>
+<p>Or visit the Prototypes page at <a href="Prototypes">Prototypes</a> to ponder and commit.</p>
+<p>If we don&#8217;t get to at least 40 kits within one month, we will refund
+  all payments.</p>
+<p>Thanks for your continued interest and support!</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Simon Schubert</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-06-25T00:00:00+02:00" pubdate data-updated="true">Jun 25<span>th</span>, 2013</time>
+      
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://mchck.github.io/blog/2013/06/25/Prototypes-Available/" data-via="MCHCK" data-counturl="http://mchck.github.io/blog/2013/06/25/Prototypes-Available/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+      
+        <a class="basic-alignment right" href="/blog/2013/07/19/First-parts-for-prototypes/" title="Next Post: First parts for prototypes">First parts for prototypes &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/07/19/First-parts-for-prototypes/">First Parts for Prototypes</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/06/25/Prototypes-Available/">Prototypes Available</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/mchck">@mchck</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'mchck',
+            count: 0,
+            skip_forks: true,
+            skip_repos: ["mchck.github.io"],
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2013 - Simon Schubert and the MC HCK project -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

@@ -5,7 +5,7 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>MC HCK - A $5 ARM development board</title>
+  <title>First parts for prototypes - MC HCK - A $5 ARM development board</title>
   <meta name="author" content="Simon Schubert and the MC HCK project">
 
   
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://mchck.github.io">
+  <link rel="canonical" href="http://mchck.github.io/blog/2013/07/19/First-parts-for-prototypes">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="MC HCK - A $5 ARM development board" type="application/atom+xml">
@@ -63,15 +63,12 @@
 </nav>
   <div id="main">
     <div id="content">
-      <div class="blog-index">
+      <div>
+<article class="hentry" role="article">
   
-  
-  
-    <article>
-      
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2013/07/19/First-parts-for-prototypes/">First Parts for Prototypes</a></h1>
+      <h1 class="entry-title">First Parts for Prototypes</h1>
     
     
       <p class="meta">
@@ -94,32 +91,50 @@
   </header>
 
 
-  <div class="entry-content"><p>Everything is progressing smoothly with the prototypes!  We&#8217;ve sold
+<div class="entry-content"><p>Everything is progressing smoothly with the prototypes!  We&#8217;ve sold
   40 prototype kits so far, which means that this undertaking will
   really happen.</p>
 <p>Today, the first parts for the kits arrived:</p>
 <p><img src="https://farm6.staticflickr.com/5321/9318462017_2c2b164e6e_c_d.jpg" alt="https://farm6.staticflickr.com/5321/9318462017_2c2b164e6e_c_d.jpg" /></p>
+<!-- more -->
+<p>DigiKey already shipped all parts that are not on backorder.  The
+  stacks of LiPo batteries on the left, the bag of RF modules on the
+  right, and the cute QFP48 programming adapters in front came from
+  China using a TaoBao agent, which worked out nicely as well.</p>
+<p>I realized that I forgot some Schottky diodes for running the LiPo
+  batteries on USB input, and some ferrite beads for experiments in
+  reducing ADC noise &#8211; I&#8217;ll add those to the outstanding DigiKey order.</p>
+<p>The parts on backorder at DigiKey are:</p>
+<ul>
+  <li>the MCUs (already in their stock)</li>
+  <li>reset/programming buttons (expected Aug 29)</li>
+  <li>boost converters (first est. Sep 4, now expected Sep 15)</li>
+</ul>
+<p>What&#8217;s missing, besides antistatic + bubble bags (which are ordered),
+  are the PCBs.  I have decided to open a patch window for now, given
+  that we are waiting on parts anyways.  That means we can do some last
+  changes to the design and layout, do a small prototype run using
+  SeeedStudio or iTeadStudio, and still get the PCBs made in time.</p>
+<p>If anybody has some not-too-intrusive suggestions for layout change,
+  now would be the time to speak up.  Next opportunity will be after
+  the prototype run when we collect experiences and feedback.</p>
+<p>I have two changes I want to look into:</p>
+<ul>
+  <li>move the ferrite beads from the power input section to the analog
+    supply lines of the MCU</li>
+  <li>allow operation fro LiPo without Schottky diode</li>
+</ul>
 </div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2013/07/19/First-parts-for-prototypes/">Read on &rarr;</a>
-    </footer>
-  
 
 
-    </article>
-  
-  
-    <article>
+  <footer>
+    <p class="meta">
       
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/06/25/Prototypes-Available/">Prototypes Available</a></h1>
-    
-    
-      <p class="meta">
-        
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Simon Schubert</span></span>
+
+      
 
 
 
@@ -131,34 +146,32 @@
   
 
 
-<time datetime="2013-06-25T00:00:00+02:00" pubdate data-updated="true">Jun 25<span>th</span>, 2013</time>
-        
-      </p>
+<time datetime="2013-07-19T00:00:00+02:00" pubdate data-updated="true">Jul 19<span>th</span>, 2013</time>
+      
+
+
+    </p>
     
-  </header>
-
-
-  <div class="entry-content"><p>We are happy to be able to announce the first prototype MC HCK dev
-  kits.  These prototype kits are meant for early adopters, who would
-  like to evaluate and verify the electrical design of the MC HCK, and
-  those who want to contribute to the growing software library.</p>
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://mchck.github.io/blog/2013/07/19/First-parts-for-prototypes/" data-via="MCHCK" data-counturl="http://mchck.github.io/blog/2013/07/19/First-parts-for-prototypes/" >Tweet</a>
+  
+  
+  
 </div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2013/06/25/Prototypes-Available/">Read on &rarr;</a>
-    </footer>
-  
 
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2013/06/25/Prototypes-Available/" title="Previous Post: Prototypes Available">&laquo; Prototypes Available</a>
+      
+      
+    </p>
+  </footer>
+</article>
 
-    </article>
-  
-  <div class="pagination">
-    
-    <a href="/blog/archives">Blog Archives</a>
-    
-  </div>
 </div>
+
 <aside class="sidebar">
   
     <section>
@@ -179,7 +192,7 @@
 <section>
   <h1>GitHub Repos</h1>
   <ul id="gh_repos">
-    <li class="loading">Status updating&#8230;</li>
+    <li class="loading">Status updating...</li>
   </ul>
   
   <a href="https://github.com/mchck">@mchck</a> on GitHub
@@ -212,6 +225,7 @@
 
   
 </aside>
+
 
     </div>
   </div>

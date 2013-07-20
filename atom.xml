@@ -1,16 +1,123 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[My Octopress Blog]]></title>
+  <title><![CDATA[MC HCK - A $5 ARM development board]]></title>
   <link href="http://mchck.github.io/atom.xml" rel="self"/>
   <link href="http://mchck.github.io/"/>
-  <updated>2013-07-19T16:17:52+02:00</updated>
+  <updated>2013-07-20T11:22:04+02:00</updated>
   <id>http://mchck.github.io/</id>
   <author>
-    <name><![CDATA[Your Name]]></name>
+    <name><![CDATA[Simon Schubert and the MC HCK project]]></name>
     
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[First parts for prototypes]]></title>
+    <link href="http://mchck.github.io/blog/2013/07/19/First-parts-for-prototypes/"/>
+    <updated>2013-07-19T00:00:00+02:00</updated>
+    <id>http://mchck.github.io/blog/2013/07/19/First-parts-for-prototypes</id>
+    <content type="html"><![CDATA[<p>Everything is progressing smoothly with the prototypes!  We&#8217;ve sold
+  40 prototype kits so far, which means that this undertaking will
+  really happen.</p>
+<p>Today, the first parts for the kits arrived:</p>
+<p><img src="https://farm6.staticflickr.com/5321/9318462017_2c2b164e6e_c_d.jpg" alt="https://farm6.staticflickr.com/5321/9318462017_2c2b164e6e_c_d.jpg" /></p>
+<!-- more -->
+<p>DigiKey already shipped all parts that are not on backorder.  The
+  stacks of LiPo batteries on the left, the bag of RF modules on the
+  right, and the cute QFP48 programming adapters in front came from
+  China using a TaoBao agent, which worked out nicely as well.</p>
+<p>I realized that I forgot some Schottky diodes for running the LiPo
+  batteries on USB input, and some ferrite beads for experiments in
+  reducing ADC noise &#8211; I&#8217;ll add those to the outstanding DigiKey order.</p>
+<p>The parts on backorder at DigiKey are:</p>
+<ul>
+  <li>the MCUs (already in their stock)</li>
+  <li>reset/programming buttons (expected Aug 29)</li>
+  <li>boost converters (first est. Sep 4, now expected Sep 15)</li>
+</ul>
+<p>What&#8217;s missing, besides antistatic + bubble bags (which are ordered),
+  are the PCBs.  I have decided to open a patch window for now, given
+  that we are waiting on parts anyways.  That means we can do some last
+  changes to the design and layout, do a small prototype run using
+  SeeedStudio or iTeadStudio, and still get the PCBs made in time.</p>
+<p>If anybody has some not-too-intrusive suggestions for layout change,
+  now would be the time to speak up.  Next opportunity will be after
+  the prototype run when we collect experiences and feedback.</p>
+<p>I have two changes I want to look into:</p>
+<ul>
+  <li>move the ferrite beads from the power input section to the analog
+    supply lines of the MCU</li>
+  <li>allow operation fro LiPo without Schottky diode</li>
+</ul>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Prototypes Available]]></title>
+    <link href="http://mchck.github.io/blog/2013/06/25/Prototypes-Available/"/>
+    <updated>2013-06-25T00:00:00+02:00</updated>
+    <id>http://mchck.github.io/blog/2013/06/25/Prototypes-Available</id>
+    <content type="html"><![CDATA[<p>We are happy to be able to announce the first prototype MC HCK dev
+  kits.  These prototype kits are meant for early adopters, who would
+  like to evaluate and verify the electrical design of the MC HCK, and
+  those who want to contribute to the growing software library.</p>
+<!-- more -->
+<p>During the past months of silence, several things have ripened to
+  usefulness:</p>
+<p>We&#8217;ve created a bootloader that allows firmware updates via USB; this
+  means that the MC HCK can be programmed without additional programming
+  adapters.  This also confirms that the MC HCK is definitely usable in
+  its most basic form.</p>
+<p>Additionally, using our custom SWD toolchain, it is possible to debug
+  code on the MC HCK using gdb.  The toolchain currently supports the
+  Bus Blaster and Bus Pirate boards as SWD adapters, but native
+  MC HCK &lt;-&gt; MC HCK SWD debug support is underway.</p>
+<p>The prototype kits will come in parts (not assembled) and will contain
+  the following components:</p>
+<ul>
+  <li>5x MCU (pre-programmed with USB bootloader)</li>
+  <li>5x boards (2.0 mm, direct USB pluggable)</li>
+  <li>1x discretes for all parts</li>
+  <li>2x NRF24L01+ RF board</li>
+  <li>2x MCP73831T-2ACI LiPo charger IC</li>
+  <li>2x 180mAh LiPo battery</li>
+  <li>2x W25Q80BV 1MB SPI flash</li>
+  <li>1x MIC5205-3.3 16V LDO</li>
+  <li>1x LM3671MF-3.3 buck IC</li>
+  <li>1x TPS61097-33 boost IC</li>
+  <li>2x Micro-USB AB receptacles</li>
+  <li>3x 32.768kHz RTC XTAL</li>
+</ul>
+<p>This allows you to build 5 standard MC HCKs, and run RF
+  communications, autonomous nodes, log large amounts of data, and run
+  from a variety of power sources.  Not all of these options have been
+  verified to work yet, but that&#8217;s what this prototype kit is for.</p>
+<p>The price of the prototype kit will be $60, and will include PayPal
+  fee and international shipping, either from Switzerland or the
+  European Union (your choice).  The total cost calculation can be found
+  at <a href="Prototypes">Prototypes</a>.</p>
+<p>To get to this price level, we need to purchase parts for 50 kits, and
+  also sell 50 kits.</p>
+<p>This is where we need your support:  We need 40 brave supporters, who
+  will commit to buying each a prototype kit (ask your friends and
+  hackspace!), and ideally transfer the money ahead of time.  Simon is personally
+  prepared to eat the cost for up to 10 kits, should we not manage to
+  find 50 buyers.</p>
+<p>Due to IC factory lead times, we expect the kits to ship end of August.</p>
+<p>You can directly commit to buying one prototype kit using the
+  following links;  please leave your correct shipping information and
+  email address, and make sure the receiving party ID is Simon, 2@0x2c.org.</p>
+<ul>
+  <li><a href="https://www.paypal.com/cgi-bin/webscr?cmd%3D_xclick&amp;business%3DCCTESJYV55TTQ&amp;lc%3DCH&amp;item_name%3DMC%2BHCK%2Bprototype%2Bkit%2B(USD)&amp;amount%3D60.00&amp;currency_code%3DUSD&amp;button_subtype%3Dservices&amp;bn%3DPP-BuyNowBF:btn_buynowCC_LG.gif:NonHosted">$60, PayPal, USD</a></li>
+  <li><a href="https://www.paypal.com/cgi-bin/webscr?cmd%3D_xclick&amp;business%3DCCTESJYV55TTQ&amp;lc%3DCH&amp;item_name%3DMC%2BHCK%2Bprototype%2Bkit%2B(EUR)&amp;amount%3D46.00&amp;currency_code%3DEUR&amp;button_subtype%3Dservices&amp;bn%3DPP-BuyNowBF:btn_buynowCC_LG.gif:NonHosted">€46, PayPal, EUR</a></li>
+</ul>
+<p>Or visit the Prototypes page at <a href="Prototypes">Prototypes</a> to ponder and commit.</p>
+<p>If we don&#8217;t get to at least 40 kits within one month, we will refund
+  all payments.</p>
+<p>Thanks for your continued interest and support!</p>
+]]></content>
+  </entry>
   
 </feed>
