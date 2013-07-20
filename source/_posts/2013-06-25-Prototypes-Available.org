@@ -51,7 +51,7 @@ verified to work yet, but that's what this prototype kit is for.
 The price of the prototype kit will be $60, and will include PayPal
 fee and international shipping, either from Switzerland or the
 European Union (your choice).  The total cost calculation can be found
-at [[Prototypes]].
+at [[https://github.com/mchck/mchck/wiki/Prototypes][Prototypes]].
 
 To get to this price level, we need to purchase parts for 50 kits, and
 also sell 50 kits.
@@ -71,7 +71,7 @@ email address, and make sure the receiving party ID is Simon, 2@0x2c.org.
 - [[https://www.paypal.com/cgi-bin/webscr?cmd%3D_xclick&business%3DCCTESJYV55TTQ&lc%3DCH&item_name%3DMC%2BHCK%2Bprototype%2Bkit%2B(USD)&amount%3D60.00&currency_code%3DUSD&button_subtype%3Dservices&bn%3DPP-BuyNowBF:btn_buynowCC_LG.gif:NonHosted][$60, PayPal, USD]]
 - [[https://www.paypal.com/cgi-bin/webscr?cmd%3D_xclick&business%3DCCTESJYV55TTQ&lc%3DCH&item_name%3DMC%2BHCK%2Bprototype%2Bkit%2B(EUR)&amount%3D46.00&currency_code%3DEUR&button_subtype%3Dservices&bn%3DPP-BuyNowBF:btn_buynowCC_LG.gif:NonHosted][€46, PayPal, EUR]]
 
-Or visit the Prototypes page at [[Prototypes]] to ponder and commit.
+Or visit the Prototypes page at [[https://github.com/mchck/mchck/wiki/Prototypes][Prototypes]] to ponder and commit.
 
 If we don't get to at least 40 kits within one month, we will refund
 all payments.
