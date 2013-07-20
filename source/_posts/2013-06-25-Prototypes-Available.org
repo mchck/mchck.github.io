@@ -1,0 +1,79 @@
+---
+layout: post
+title: Prototypes Available
+date: 2013-06-25
+author: Simon Schubert
+---
+
+We are happy to be able to announce the first prototype MC HCK dev
+kits.  These prototype kits are meant for early adopters, who would
+like to evaluate and verify the electrical design of the MC HCK, and
+those who want to contribute to the growing software library.
+
+#+HTML: <!-- more -->
+
+During the past months of silence, several things have ripened to
+usefulness:
+
+We've created a bootloader that allows firmware updates via USB; this
+means that the MC HCK can be programmed without additional programming
+adapters.  This also confirms that the MC HCK is definitely usable in
+its most basic form.
+
+Additionally, using our custom SWD toolchain, it is possible to debug
+code on the MC HCK using gdb.  The toolchain currently supports the
+Bus Blaster and Bus Pirate boards as SWD adapters, but native
+MC HCK <-> MC HCK SWD debug support is underway.
+
+
+
+The prototype kits will come in parts (not assembled) and will contain
+the following components:
+
+- 5x MCU (pre-programmed with USB bootloader)
+- 5x boards (2.0 mm, direct USB pluggable)
+- 1x discretes for all parts
+- 2x NRF24L01+ RF board
+- 2x MCP73831T-2ACI LiPo charger IC
+- 2x 180mAh LiPo battery
+- 2x W25Q80BV 1MB SPI flash
+- 1x MIC5205-3.3 16V LDO
+- 1x LM3671MF-3.3 buck IC
+- 1x TPS61097-33 boost IC
+- 2x Micro-USB AB receptacles
+- 3x 32.768kHz RTC XTAL
+
+This allows you to build 5 standard MC HCKs, and run RF
+communications, autonomous nodes, log large amounts of data, and run
+from a variety of power sources.  Not all of these options have been
+verified to work yet, but that's what this prototype kit is for.
+
+The price of the prototype kit will be $60, and will include PayPal
+fee and international shipping, either from Switzerland or the
+European Union (your choice).  The total cost calculation can be found
+at [[Prototypes]].
+
+To get to this price level, we need to purchase parts for 50 kits, and
+also sell 50 kits.
+
+This is where we need your support:  We need 40 brave supporters, who
+will commit to buying each a prototype kit (ask your friends and
+hackspace!), and ideally transfer the money ahead of time.  Simon is personally
+prepared to eat the cost for up to 10 kits, should we not manage to
+find 50 buyers.
+
+Due to IC factory lead times, we expect the kits to ship end of August.
+
+You can directly commit to buying one prototype kit using the
+following links;  please leave your correct shipping information and
+email address, and make sure the receiving party ID is Simon, 2@0x2c.org.
+
+- [[https://www.paypal.com/cgi-bin/webscr?cmd%3D_xclick&business%3DCCTESJYV55TTQ&lc%3DCH&item_name%3DMC%2BHCK%2Bprototype%2Bkit%2B(USD)&amount%3D60.00&currency_code%3DUSD&button_subtype%3Dservices&bn%3DPP-BuyNowBF:btn_buynowCC_LG.gif:NonHosted][$60, PayPal, USD]]
+- [[https://www.paypal.com/cgi-bin/webscr?cmd%3D_xclick&business%3DCCTESJYV55TTQ&lc%3DCH&item_name%3DMC%2BHCK%2Bprototype%2Bkit%2B(EUR)&amount%3D46.00&currency_code%3DEUR&button_subtype%3Dservices&bn%3DPP-BuyNowBF:btn_buynowCC_LG.gif:NonHosted][€46, PayPal, EUR]]
+
+Or visit the Prototypes page at [[Prototypes]] to ponder and commit.
+
+If we don't get to at least 40 kits within one month, we will refund
+all payments.
+
+Thanks for your continued interest and support!

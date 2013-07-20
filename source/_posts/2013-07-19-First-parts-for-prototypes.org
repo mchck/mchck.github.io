@@ -1,0 +1,45 @@
+---
+layout: post
+title: First parts for prototypes
+date: 2013-07-19
+author: Simon Schubert
+---
+
+Everything is progressing smoothly with the prototypes!  We've sold
+40 prototype kits so far, which means that this undertaking will
+really happen.
+
+Today, the first parts for the kits arrived:
+
+[[https://farm6.staticflickr.com/5321/9318462017_2c2b164e6e_c_d.jpg]]
+
+#+HTML: <!-- more -->
+
+DigiKey already shipped all parts that are not on backorder.  The
+stacks of LiPo batteries on the left, the bag of RF modules on the
+right, and the cute QFP48 programming adapters in front came from
+China using a TaoBao agent, which worked out nicely as well.
+
+I realized that I forgot some Schottky diodes for running the LiPo
+batteries on USB input, and some ferrite beads for experiments in
+reducing ADC noise -- I'll add those to the outstanding DigiKey order.
+
+The parts on backorder at DigiKey are:
+- the MCUs (already in their stock)
+- reset/programming buttons (expected Aug 29)
+- boost converters (first est. Sep 4, now expected Sep 15)
+
+What's missing, besides antistatic + bubble bags (which are ordered),
+are the PCBs.  I have decided to open a patch window for now, given
+that we are waiting on parts anyways.  That means we can do some last
+changes to the design and layout, do a small prototype run using
+SeeedStudio or iTeadStudio, and still get the PCBs made in time.
+
+If anybody has some not-too-intrusive suggestions for layout change,
+now would be the time to speak up.  Next opportunity will be after
+the prototype run when we collect experiences and feedback.
+
+I have two changes I want to look into:
+- move the ferrite beads from the power input section to the analog
+  supply lines of the MCU
+- allow operation fro LiPo without Schottky diode
