@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[MC HCK - A $5 ARM development board]]></title>
-  <link href="http://mchck.github.io/atom.xml" rel="self"/>
-  <link href="http://mchck.github.io/"/>
-  <updated>2013-07-23T16:44:24+02:00</updated>
-  <id>http://mchck.github.io/</id>
+  <title><![CDATA[MC HCK]]></title>
+  <link href="http://mchck.org/atom.xml" rel="self"/>
+  <link href="http://mchck.org/"/>
+  <updated>2013-07-23T17:40:34+02:00</updated>
+  <id>http://mchck.org/</id>
   <author>
     <name><![CDATA[Simon Schubert and the MC HCK project]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[First parts for prototypes]]></title>
-    <link href="http://mchck.github.io/blog/2013/07/19/First-parts-for-prototypes/"/>
+    <link href="http://mchck.org/blog/2013-07-19-First-parts-for-prototypes/"/>
     <updated>2013-07-19T00:00:00+02:00</updated>
-    <id>http://mchck.github.io/blog/2013/07/19/First-parts-for-prototypes</id>
+    <id>http://mchck.org/blog/First-parts-for-prototypes</id>
     <content type="html"><![CDATA[<p>Everything is progressing smoothly with the prototypes!  We&#8217;ve sold
   40 prototype kits so far, which means that this undertaking will
   really happen.</p>
@@ -56,9 +56,9 @@
   
   <entry>
     <title type="html"><![CDATA[Prototypes Available]]></title>
-    <link href="http://mchck.github.io/blog/2013/06/25/Prototypes-Available/"/>
+    <link href="http://mchck.org/blog/2013-06-25-Prototypes-Available/"/>
     <updated>2013-06-25T00:00:00+02:00</updated>
-    <id>http://mchck.github.io/blog/2013/06/25/Prototypes-Available</id>
+    <id>http://mchck.org/blog/Prototypes-Available</id>
     <content type="html"><![CDATA[<p>We are happy to be able to announce the first prototype MC HCK dev
   kits.  These prototype kits are meant for early adopters, who would
   like to evaluate and verify the electrical design of the MC HCK, and

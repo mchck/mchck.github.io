@@ -1,4 +1,4 @@
 User-agent: *
 Disallow: 
 
-Sitemap: http://mchck.github.io/sitemap.xml 
+Sitemap: http://mchck.org/sitemap.xml 
