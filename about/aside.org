@@ -1,0 +1,9 @@
+#+ATTR_HTML: :alt MC HCK R1 being programmed
+[[/about][/images/mchck-r1-programming-small.jpg]]
+
+The MC HCK (pronounced: "McHack" [m\aelig{}k h\aelig{}k]) is a
+/small/, /cheap/, and /versatile/ ARM Cortex-M4 based microcontroller
+platform.
+
+The MC HCK is entirely /open source/ and created by the community,
+from geeks, for geeks.

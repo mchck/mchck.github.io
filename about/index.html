@@ -9,7 +9,7 @@
   <meta name="author" content="Simon Schubert and the MC HCK project">
 
   
-  <meta name="description" content="About the MC HCK The MC HCK (pronounced: &#8220;McHack&#8221; [m&aelig;k h&aelig;k]) is a small, cheap, and powerful microcontroller platform that &hellip;">
+  <meta name="description" content="About the MC HCK The MC HCK (pronounced: &#8220;McHack&#8221; [m&aelig;k h&aelig;k]) is a small, cheap, and versatile microcontroller platform that &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -34,11 +34,11 @@
 
 </head>
 
-<body   >
+<body   class="no-sidebar"  >
   <header role="banner"><hgroup>
   <h1><a href="/">MC HCK</a></h1>
   
-    <h2>small. cheap. powerful. open source.</h2>
+    <h2>small. cheap. versatile. open source.</h2>
   
 </hgroup>
 
@@ -74,11 +74,11 @@
   </header>
   
   <p><img src="/images/mchck-r1-programming-small.jpg" alt="/images/mchck-r1-programming-small.jpg" /></p>
-<p>The MC HCK (pronounced: &#8220;McHack&#8221; [m&aelig;k h&aelig;k]) is a small,
-  cheap, and powerful microcontroller platform that supports USB for
-  easy programming, at a low price (<a href="https://github.com/mchck/mchck/wiki/Cost-Calculation">current estimate: $7, in bulk $5</a>).
-  It enables everybody to build big and small projects, because spending
-  &gt;$20 for other microcontroller boards is just too much.</p>
+<p>The MC HCK (pronounced: &#8220;McHack&#8221; [m&aelig;k h&aelig;k]) is a <i>small</i>, <i>cheap</i>, and
+  <i>versatile</i> microcontroller platform that supports USB for easy
+  programming, and can be built at home for $5.  The MC HCK enables
+  everybody to build big and small projects, because spending &gt;$20 for
+  other microcontroller boards is just too much.</p>
 <p>With the MC HCK, everybody can quickly build projects on a small
   budget: In many situations, a set of optional footprints avoid the
   need for expensive add-on boards!  These optional features are not
@@ -113,15 +113,15 @@
   fridge door, and use it for the mailbox instead; you all know the
   drill &#8211; $20 makes you stingy (&#8220;frugal&#8221;).  $5 always goes.  <b>Low
   price fosters creativity.</b></p>
-<p><b>Powerful.</b> Because, sometimes, an AVR is just a bit slow.  And
-  really, getting an obscenely expensive FTDI cable every time you want
-  to interface your microcontroller with a PC?  Then all this serial
-  console business, 10 different FTDI COM/ttyUSB ports&#8230;  So what we
-  need is enough computing power and easy interfacing with PCs.  Modern
-  ARM MCU with integrated USB transceiver!  With a bit of supplied
-  library code, implementing a USB device is a breeze.  HID, mass
-  storage, serial port.  Easy interfacing with the PC.  <b>Powerful
-  modern MCUs allow for easier development and usability.</b></p>
+<p><b>Versatile.</b> We try to squeeze as many features as possible into the
+  little space of the MC HCK.  A modern ARM MCU with integrated USB
+  transceiver allows easy interfacing with PCs: with a bit of supplied
+  library code, implementing a USB device is a breeze.  The MC HCK can
+  be programmed directly via USB, but can also serve as debug adapter
+  for another MC HCK board.  We also integrated a mounting hole and
+  footprints for a LiPo charger, a NOR Flash, for 3 different voltage
+  regulators, and for a 2.4GHz RF module.  Because, you know, you never
+  know.  <b>Versatile means less shields, more features.</b></p>
 <h2>Philosophy</h2>
 <p>The MC HCK is a quick hack toy from geeks, for geeks.  It is designed
   to be versatile, without adding excess cost: the board provides some
@@ -181,60 +181,6 @@
 </article>
 
 </div>
-
-<aside class="sidebar">
-  
-    <section>
-  <h1>Recent Posts</h1>
-  <ul id="recent_posts">
-    
-      <li class="post">
-        <a href="/blog/2013-07-19-First-parts-for-prototypes/">First Parts for Prototypes</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013-06-25-Prototypes-Available/">Prototypes Available</a>
-      </li>
-    
-  </ul>
-</section>
-
-<section>
-  <h1>GitHub Repos</h1>
-  <ul id="gh_repos">
-    <li class="loading">Status updating...</li>
-  </ul>
-  
-  <a href="https://github.com/mchck">@mchck</a> on GitHub
-  
-  <script type="text/javascript">
-    $(document).ready(function(){
-        if (!window.jXHR){
-            var jxhr = document.createElement('script');
-            jxhr.type = 'text/javascript';
-            jxhr.src = '/javascripts/libs/jXHR.js';
-            var s = document.getElementsByTagName('script')[0];
-            s.parentNode.insertBefore(jxhr, s);
-        }
-
-        github.showRepos({
-            user: 'mchck',
-            count: 0,
-            skip_forks: true,
-            skip_repos: ["mchck.github.io"],
-            target: '#gh_repos'
-        });
-    });
-  </script>
-  <script src="/javascripts/github.js" type="text/javascript"> </script>
-</section>
-
-
-
-
-
-  
-</aside>
 
 
     </div>
