@@ -1,4 +1,8 @@
 <section>
-  <h1>About Me</h1>
-  <p>A little something about me.</p>
+  <h1><a href="/about">About the MC HCK</a></h1>
+  {% capture aside_about_contents %}{% render_partial about/aside.org %}{% endcapture %}
+  {{ aside_about_contents }}
+  <footer>
+    <a rel="full-article" href="{{ root_url }}/about">{{ site.excerpt_link }}</a>
+  </footer>
 </section>

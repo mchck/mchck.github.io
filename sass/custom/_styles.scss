@@ -1,2 +1,25 @@
 // This File is imported last, and will override other styles in the cascade
 // Add styles here to make changes without digging in too much
+aside.sidebar {
+    section {
+        a[rel=full-article] {
+            background: darken($main-bg, 5);
+            display: inline-block;
+            padding: .4em .8em;
+            margin-right: .5em;
+            text-decoration: none;
+            color: mix($text-color, $text-color-light);
+            @extend .serif;
+            @include transition(background-color .5s);
+            &:hover {
+                background: $link-color-hover;
+                text-shadow: none;
+                color: $main-bg;
+            }
+        }
+        footer {
+            @extend .sans;
+            margin-top: 1em;
+        }
+    }
+}
