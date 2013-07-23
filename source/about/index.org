@@ -1,0 +1,92 @@
+---
+layout: page
+title: About the MC HCK
+author: Simon Schubert
+---
+
+#+ATTR_HTML: :alt MC HCK R1 being programmed
+[[/images/mchck-r1-programming-small.jpg]]
+
+The MC HCK (pronounced: "McHack" [m\aelig{}k h\aelig{}k]) is a small,
+cheap, and powerful microcontroller platform that supports USB for
+easy programming, at a low price ([[https://github.com/mchck/mchck/wiki/Cost-Calculation][current estimate: $7, in bulk $5]]).
+It enables everybody to build big and small projects, because spending
+>$20 for other microcontroller boards is just too much.
+
+With the MC HCK, everybody can quickly build projects on a small
+budget: In many situations, a set of optional footprints avoid the
+need for expensive add-on boards!  These optional features are not
+populated by default to keep the price low; however, the user can
+easily solder on components to enable these features.  There is space
+for a LiPo charger, SPI flash storage (up to 8MB), voltage regulators
+(up to 16V), a mounting screw, a 2.4GHz radio module, and more!
+
+The MC HCK is /entirely open source/, both hardware and software.
+Check out our [[https://github.com/mchck/mchck/wiki/Schematic-and-layout][project repository]] to get the latest KiCad designs or
+[[https://github.com/mchck/mchck/tree/fab/hardware][fabrication outputs]].  /Everybody is encouraged to build MC HCKs!/
+
+** The name
+
+Like the board itself, the name is versatile and can be used in
+different ways.  "MC" is short for microcontroller, but it also makes
+it sound like a Scottish surname, and Scots are stereotypically cheap.
+We like cheap.  And "HCK" stands for "hacking", "hackers",
+"hackspaces", but shorter, smaller.  Like the MC HCK board itself.
+And MC/HCK is a pun on TCP's SYN/ACK, meaning "ready to go", even a
+step ahead.
+
+Oh and it rhymes.
+
+** Motivation
+
+*Small.* The Arduino is huge.  It is just way bulky for many purposes.
+Also you can't breadboard with it.  Ok, now there is the Pro Mini or
+the Teensy.  Yes, that's the form factor we want.  *Small form factor
+enables more uses.*
+
+*Cheap.* Well, there you have it.  Every Arduino sets you back about
+$20.  The mbed costs way more.  Ok, the MSP430 Launchpad costs $8, but
+then it is... well, the Launchpad.  But $5 sounds good.  At $5, you
+don't have to ponder anymore whether your silly idea is _really_ worth
+it.  $20 might be too much to measure when the postman delivers
+letters (plot it over the year?).  Or instead, you decide to take
+apart your Arduino rig that was used to count how often you open the
+fridge door, and use it for the mailbox instead; you all know the
+drill -- $20 makes you stingy ("frugal").  $5 always goes.  *Low
+price fosters creativity.*
+
+*Powerful.* Because, sometimes, an AVR is just a bit slow.  And
+really, getting an obscenely expensive FTDI cable every time you want
+to interface your microcontroller with a PC?  Then all this serial
+console business, 10 different FTDI COM/ttyUSB ports...  So what we
+need is enough computing power and easy interfacing with PCs.  Modern
+ARM MCU with integrated USB transceiver!  With a bit of supplied
+library code, implementing a USB device is a breeze.  HID, mass
+storage, serial port.  Easy interfacing with the PC.  *Powerful
+modern MCUs allow for easier development and usability.*
+
+** Philosophy
+
+The MC HCK is a quick hack toy from geeks, for geeks.  It is designed
+to be versatile, without adding excess cost: the board provides some
+more features for those of us who are not afraid of soldering the odd
+component on a board.  We've included a footprint for a LiPo charger
+IC, so that you can easily convert it to an autonomous unit, and if
+you populate the footprint for the SPI flash IC, you can store up to
+8MB of data for true autonomous sensor applications.  Add a $2 2.4GHz
+RF module, and you have the first node of a sensor network.  No
+expensive "shields" necessary.
+
+The MC HCK is not a product designed to make money.  We want a small,
+cheap and powerful microcontroller platform to be available everybody
+for easy hacking and building.  To get to our target of $5, we need to
+produce at least 10k units.  But somebody's got to bite the bullet and
+go through with it and build and sell it.  If it has to be one of us,
+so be it, if somebody else will do it instead of us, even better.
+
+The MC HCK is a community project and needs you!  We'd love to hear
+feedback from you, especially (constructive) criticism.  What did we
+do wrong, what do you think could be done better?  Let us know what
+you think!  What are your expectations towards such a board; what
+would you like to see as a feature?  Do you think we have an error in
+our [[https://github.com/mchck/mchck/wiki/Schematic-and-layout][design]]?  Get involved and post [[https://github.com/mchck/mchck/issues][bug reports]] and edit the wiki!
