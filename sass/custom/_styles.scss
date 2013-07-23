@@ -2,6 +2,12 @@
 // Add styles here to make changes without digging in too much
 aside.sidebar {
     section {
+        h1 a {
+            text-decoration: none;
+            &:hover {
+                text-decoration: underline;
+            }
+        }
         a[rel=full-article] {
             background: darken($main-bg, 5);
             display: inline-block;
