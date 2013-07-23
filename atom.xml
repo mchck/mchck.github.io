@@ -4,7 +4,7 @@
   <title><![CDATA[MC HCK - A $5 ARM development board]]></title>
   <link href="http://mchck.github.io/atom.xml" rel="self"/>
   <link href="http://mchck.github.io/"/>
-  <updated>2013-07-20T11:22:04+02:00</updated>
+  <updated>2013-07-23T16:44:24+02:00</updated>
   <id>http://mchck.github.io/</id>
   <author>
     <name><![CDATA[Simon Schubert and the MC HCK project]]></name>
@@ -97,7 +97,7 @@
 <p>The price of the prototype kit will be $60, and will include PayPal
   fee and international shipping, either from Switzerland or the
   European Union (your choice).  The total cost calculation can be found
-  at <a href="Prototypes">Prototypes</a>.</p>
+  at <a href="https://github.com/mchck/mchck/wiki/Prototypes">Prototypes</a>.</p>
 <p>To get to this price level, we need to purchase parts for 50 kits, and
   also sell 50 kits.</p>
 <p>This is where we need your support:  We need 40 brave supporters, who
@@ -113,7 +113,7 @@
   <li><a href="https://www.paypal.com/cgi-bin/webscr?cmd%3D_xclick&amp;business%3DCCTESJYV55TTQ&amp;lc%3DCH&amp;item_name%3DMC%2BHCK%2Bprototype%2Bkit%2B(USD)&amp;amount%3D60.00&amp;currency_code%3DUSD&amp;button_subtype%3Dservices&amp;bn%3DPP-BuyNowBF:btn_buynowCC_LG.gif:NonHosted">$60, PayPal, USD</a></li>
   <li><a href="https://www.paypal.com/cgi-bin/webscr?cmd%3D_xclick&amp;business%3DCCTESJYV55TTQ&amp;lc%3DCH&amp;item_name%3DMC%2BHCK%2Bprototype%2Bkit%2B(EUR)&amp;amount%3D46.00&amp;currency_code%3DEUR&amp;button_subtype%3Dservices&amp;bn%3DPP-BuyNowBF:btn_buynowCC_LG.gif:NonHosted">€46, PayPal, EUR</a></li>
 </ul>
-<p>Or visit the Prototypes page at <a href="Prototypes">Prototypes</a> to ponder and commit.</p>
+<p>Or visit the Prototypes page at <a href="https://github.com/mchck/mchck/wiki/Prototypes">Prototypes</a> to ponder and commit.</p>
 <p>If we don&#8217;t get to at least 40 kits within one month, we will refund
   all payments.</p>
 <p>Thanks for your continued interest and support!</p>
