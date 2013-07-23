@@ -58,7 +58,16 @@ module Jekyll
         else
           partial = Liquid::Template.parse(contents)
           context.stack do
-            partial.render(context)
+            content = partial.render(context)
+            site = context.registers[:site]
+            ext = File.extname(@file)
+            converter = site.converters.find { |c| c.matches(ext) }
+
+            if converter.nil?
+              contents
+            else
+              converter.convert(contents)
+            end
           end
         end
       end
