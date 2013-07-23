@@ -2,12 +2,12 @@
 #      Main Configs       #
 # ----------------------- #
 
-url: http://mchck.github.io
-title: MC HCK - A $5 ARM development board
+url: http://mchck.org
+title: MC HCK
 subtitle: small. cheap. powerful. open source.
 author: Simon Schubert and the MC HCK project
 simple_search: http://google.com/search
-description:
+description: A $5 ARM development board
 
 # Default date format is "ordinal" (resulting in "July 22nd 2007")
 # You can customize the format as defined in
