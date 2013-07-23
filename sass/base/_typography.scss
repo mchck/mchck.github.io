@@ -76,9 +76,9 @@ ol { list-style-type: decimal;
 ul, ol { &, ul, ol { margin-left: 1.3em; }}
 ul, ol { ul, ol { margin-bottom: 0em; }}
 
-strong { font-weight: bold; }
+strong, b { font-weight: bold; }
 
-em { font-style: italic; }
+em, i { font-style: italic; }
 
 sup, sub { font-size: 0.75em; position: relative;  display: inline-block; padding: 0 .2em; line-height: .8em;}
 sup { top: -.5em; }
@@ -161,4 +161,3 @@ article blockquote {
   white-space: pre-wrap;
   word-wrap: break-word;
 }
-
