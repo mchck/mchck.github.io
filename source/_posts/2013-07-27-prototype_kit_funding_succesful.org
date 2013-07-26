@@ -6,7 +6,7 @@ author: Simon Schubert
 description: The funding of the mchck prototype kits has been successful.
 ---
 
-/This text is a adapted version of what has been mailed to the
+/This text is an adapted version of what has been mailed to the
 prototype supporters./
 
 Thanks to all supporters for ordering a MC HCK prototype kit and
