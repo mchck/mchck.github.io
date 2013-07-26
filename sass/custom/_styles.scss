@@ -1,5 +1,13 @@
 // This File is imported last, and will override other styles in the cascade
 // Add styles here to make changes without digging in too much
+body > header {
+    background-image: url('/assets/mchck-banner.jpg');
+    background-size: cover;
+    h1, h2 {
+        text-shadow: lighten($header-bg, 10) 0 1px 3px;
+    }
+}
+
 aside.sidebar {
     section {
         h1 a {
