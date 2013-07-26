@@ -74,3 +74,22 @@ ul.horizontal {
         display: inline;
     }
 }
+
+article[role=article] {
+    header + .entry-content > p:first-child, header + p {
+        img {
+            @media only screen and (min-width: 480px) {
+                float: right;
+                margin-left: 1em;
+                margin-bottom: 1em;
+                width: 40%;
+            }
+            @media only screen and (min-width: 750px) {
+                float: right;
+                margin-left: 1em;
+                margin-bottom: 1em;
+                width: 30%;
+            }
+        }
+    }
+}
