@@ -28,4 +28,37 @@ aside.sidebar {
             margin-top: 1em;
         }
     }
+    form {
+        @include background-clip(padding-box);
+        margin: 0;
+        padding: 0;
+        display: inline;
+        input[type=text] {
+            padding: .3em .5em 0;
+            font-size: .85em;
+            font-family: $sans;
+            line-height: 1.1em;
+            width: 9em;
+            @include border-radius(.5em);
+            @include background-clip(padding-box);
+            @include box-shadow(lighten($sidebar-bg, 2) 0 1px);
+            background-color: lighten($sidebar-bg, 15);
+            border: 1px solid $sidebar-border;
+            color: #888;
+            &:focus {
+                color: #444;
+                border-color: #80b1df;
+                @include box-shadow(#80b1df 0 0 4px, #80b1df 0 0 3px inset);
+                background-color: #fff;
+                outline: none;
+            }
+        }
+    }
+}
+
+ul.horizontal {
+    display: inline;
+    li {
+        display: inline;
+    }
 }
