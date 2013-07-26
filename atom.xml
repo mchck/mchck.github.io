@@ -4,7 +4,7 @@
   <title><![CDATA[MC HCK]]></title>
   <link href="http://mchck.org/atom.xml" rel="self"/>
   <link href="http://mchck.org/"/>
-  <updated>2013-07-26T23:59:14+02:00</updated>
+  <updated>2013-07-27T00:44:00+02:00</updated>
   <id>http://mchck.org/</id>
   <author>
     <name><![CDATA[Simon Schubert and the MC HCK project]]></name>
@@ -12,6 +12,39 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Prototype kit funding succesful!]]></title>
+    <link href="http://mchck.org/blog/2013-07-27-prototype_kit_funding_succesful/"/>
+    <updated>2013-07-27T00:27:50+02:00</updated>
+    <id>http://mchck.org/blog/prototype_kit_funding_succesful</id>
+    <content type="html"><![CDATA[<p><i>This text is a adapted version of what has been mailed to the
+  prototype supporters.</i></p>
+<p>Thanks to all supporters for ordering a MC HCK prototype kit and
+  supporting the project!  The funding has been successful: almost all
+  kits have been sold.</p>
+<p>There are a few things that will help make the MC HCK a success:</p>
+<!-- more -->
+<p>First, please subscribe to the MC HCK mailinglist to follow the
+  progress of the prototype order, and to exchange ideas and feedback
+  for the MC HCK.  The mailing list is extremely low volume.  Go to
+  <a href="https://0x2c.org/mailman/listinfo/nerds">https://0x2c.org/mailman/listinfo/nerds</a> to sign up.  Best do it now
+  and then continue reading the email.</p>
+<p>Second, if you bought a prototype kit, please make sure that you
+  received a mail from me and that your shipping address mentioned in
+  the mail is correct.</p>
+<p>Third, a short status update;  unless something big happens, I will
+  not email buyers with further updates.  Subscribe to the mailing list if
+  you would like updates.</p>
+<p>I have already received most parts for the kits, but some are on
+  backorder.  The backorder is currently estimated to arrive on Sep 21,
+  2013, but DigiKey&#8217;s estimation has been slipping.  I am thinking about
+  getting these parts from a different distributor.</p>
+<p>Thanks again to everybody for supporting the MC HCK project, and
+  thanks for subscribing to the mailing list and contributing your
+  ideas!</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[First parts for prototypes]]></title>
