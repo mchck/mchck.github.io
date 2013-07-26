@@ -1,0 +1,43 @@
+---
+layout: post
+title: "Prototype kit funding succesful!"
+date: "2013-07-27 00:27:50 +0200"
+author: Simon Schubert
+description: The funding of the mchck prototype kits has been successful.
+---
+
+/This text is a adapted version of what has been mailed to the
+prototype supporters./
+
+Thanks to all supporters for ordering a MC HCK prototype kit and
+supporting the project!  The funding has been successful: almost all
+kits have been sold.
+
+There are a few things that will help make the MC HCK a success:
+
+#+HTML: <!-- more -->
+
+First, please subscribe to the MC HCK mailinglist to follow the
+progress of the prototype order, and to exchange ideas and feedback
+for the MC HCK.  The mailing list is extremely low volume.  Go to
+<https://0x2c.org/mailman/listinfo/nerds> to sign up.  Best do it now
+and then continue reading the email.
+
+
+Second, if you bought a prototype kit, please make sure that you
+received a mail from me and that your shipping address mentioned in
+the mail is correct.
+
+Third, a short status update;  unless something big happens, I will
+not email buyers with further updates.  Subscribe to the mailing list if
+you would like updates.
+
+I have already received most parts for the kits, but some are on
+backorder.  The backorder is currently estimated to arrive on Sep 21,
+2013, but DigiKey's estimation has been slipping.  I am thinking about
+getting these parts from a different distributor.
+
+
+Thanks again to everybody for supporting the MC HCK project, and
+thanks for subscribing to the mailing list and contributing your
+ideas!
