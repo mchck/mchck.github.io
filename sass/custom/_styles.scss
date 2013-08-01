@@ -75,7 +75,7 @@ ul.horizontal {
     }
 }
 
-article[role=article] {
+article[role=article], div.blog-index > article {
     header + .entry-content > p:first-child, header + p {
         margin: 0;
         img {
