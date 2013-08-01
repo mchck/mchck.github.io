@@ -1,0 +1,19 @@
+---
+layout: post
+title: "Design revision 5 has landed"
+date: 2013-08-01 00:22
+comments: true
+categories:
+preview: true
+---
+
+[[/images/mchck-r5-composite.png][/images/mchck-r5-composite.png]]
+
+Given that we are still waiting for components for the prototype kit,
+I used the opportunity to do another design iteration.  The new design
+features (hopefully) improved analog noise performance, and a
+rearranged pin layout that allows to use the nRF24L01+ RF boards
+directly on SPI.
+
+During the coming weeks, I will do a post series explaining the
+gimmicks and features of the MC HCK.
