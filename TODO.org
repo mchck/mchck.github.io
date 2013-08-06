@@ -5,3 +5,36 @@
 
 * New content
 ** TODO describe options
+- [ ] staggered pads
+- [ ] lipo
+  - LiPo charger
+  - charge status pad
+  - jst connector
+- [ ] USB
+  - (main) USB A connector
+  - (secondary) USB micro AB connector
+  - USB header (cut tab)
+  - solder jumpers
+- [ ] SPI flash (+ footprint)
+- [ ] analog section
+  - [ ] ferrite beads
+  - [ ] VREF
+  - [ ] C9/SJ4 combo footprint
+- [ ] mounting hole
+- [ ] power options
+  - 3-way voltage regulator
+  - VRAW + USB diode
+- [ ] nRF24l01 board compat
+  - SPI dual allocation
+- [ ] debugging/programming
+- [ ] crystal options
+  - internal resonator good enough for USB (measure)
+  - high freq osc (integrated caps)
+  - RTC pads
+- [ ] layout goals
+  - short ground loops
+  - quiet analog section?
+  - design rules: can be fabbed in china
+- [ ] software library
+  - linker scripts
+  - makefile infrastructure
