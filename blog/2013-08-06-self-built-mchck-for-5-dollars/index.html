@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>First parts for prototypes - mchck.org</title>
+  <title>Self built MC HCK for $5 - mchck.org</title>
   <meta name="author" content="Simon Schubert and the MC HCK project">
 
   
-  <meta name="description" content="Everything is progressing smoothly with the prototypes! We&#8217;ve sold 40 prototype kits so far, which means that this undertaking will really &hellip;">
+  <meta name="description" content="From the beginning, the MC HCK was conceived to be not only cheap to produce and sell, but it was also conceived to be buildable at home, at a low &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://mchck.org/blog/2013-07-19-First-parts-for-prototypes">
+  <link rel="canonical" href="http://mchck.org/blog/2013-08-06-self-built-mchck-for-5-dollars">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="mchck.org" type="application/atom+xml">
@@ -70,7 +70,7 @@
   
   <header>
     
-      <h1 class="entry-title">First Parts for Prototypes</h1>
+      <h1 class="entry-title">Self Built MC HCK for $5</h1>
     
     
       <p class="meta">
@@ -86,46 +86,49 @@
   
 
 
-<time datetime="2013-07-19T00:00:00+02:00" pubdate data-updated="true">Jul 19<span>th</span>, 2013</time>
+<time datetime="2013-08-06T00:00:00+02:00" pubdate data-updated="true">Aug 6<span>th</span>, 2013</time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><p>Everything is progressing smoothly with the prototypes!  We&#8217;ve sold
-  40 prototype kits so far, which means that this undertaking will
-  really happen.</p>
-<p>Today, the first parts for the kits arrived:</p>
-<p><img src="https://farm6.staticflickr.com/5321/9318462017_2c2b164e6e_c_d.jpg" alt="https://farm6.staticflickr.com/5321/9318462017_2c2b164e6e_c_d.jpg" /></p>
+<div class="entry-content"><p><img src="/images/mchck-r4-about-to-assemble.jpg" alt="/images/mchck-r4-about-to-assemble.jpg" /></p>
+<p>From the beginning, the MC HCK was conceived to be not only cheap to
+  produce and sell, but it was also conceived to be buildable at home,
+  at a low cost.  In this post, we&#8217;ll show how to build a MC HCK at
+  home.</p>
 <!-- more -->
-<p>DigiKey already shipped all parts that are not on backorder.  The
-  stacks of LiPo batteries on the left, the bag of RF modules on the
-  right, and the cute QFP48 programming adapters in front came from
-  China using a TaoBao agent, which worked out nicely as well.</p>
-<p>I realized that I forgot some Schottky diodes for running the LiPo
-  batteries on USB input, and some ferrite beads for experiments in
-  reducing ADC noise &#8211; I&#8217;ll add those to the outstanding DigiKey order.</p>
-<p>The parts on backorder at DigiKey are:</p>
+<h2>Getting the Parts</h2>
+<p>All required and optional parts are listed in the <a href="https://github.com/mchck/mchck/wiki/BOM">BOM</a>.  Let&#8217;s quickly
+  go over how to get the required ones.</p>
+<h3>PCB</h3>
+<p>The MC HCK boards can easily be ordered from <a href="http://www.seeedstudio.com/depot/fusion-pcb-service-2-layers-p-835.html">the</a> <a href="http://imall.iteadstudio.com/open-pcb/pcb-prototyping/im120418001.html">usual</a> <a href="http://www.hackvana.com/store/">suspects</a> in
+  China.  Just download the <a href="https://github.com/mchck/mchck/tree/fab/hardware">fabrication gerbers</a> and attach them to your
+  order; usually you will have to create a zip file.  Now wait 10 days
+  or so until your PCBs arrive. <i>Cost: $10 + shipping for 10 boards</i></p>
+<h3>MCU</h3>
+<p>You can <a href="http://www.freescale.com/webapp/search.partparamdetail.framework?PART_NUMBER%3DMK20DX128VLF5&amp;buyNow%3Dtrue#Ordering_Information">sample</a> a compatible MCU directly from Freescale. <i>Cost: $5 for 5 MCUs.</i></p>
+<h3>Passives</h3>
+<p>These are common parts, and many people will already have them in some
+  way or another.  The SMT parts are 0603 size, but the pads are large
+  enough to take 0805 parts as well.  In case you&#8217;re still missing one
+  or the other part, below is a list of possible eBay sources:</p>
 <ul>
-  <li>the MCUs (already in their stock)</li>
-  <li>reset/programming buttons (expected Aug 29)</li>
-  <li>boost converters (first est. Sep 4, now expected Sep 15)</li>
+  <li><a href="http://www.ebay.com/itm/100-smd-capacitor-0603-kr-x7r-9bb-104-0-1uf-100nf-m-/390325999203">100nf decoupling caps</a> <i>Cost: $1.85 for 100</i></li>
+  <li><a href="http://www.ebay.com/itm/20x-smd-capacitor-0603-zr-y5v-7bb-225-2-2uf-16v-new-m-/320700482046">2.2&mu;f regulator caps</a> <i>Cost: $1.89 for 20</i></li>
+  <li><a href="http://www.ebay.com/itm/100-pcs-smd-chip-surface-mount-0603-resistor-33-ohm-/120823881206">33&Omega; resistors</a> <i>Cost: $2 for 100</i></li>
+  <li><a href="http://www.ebay.com/itm/50-smd-smt-0603-chip-resistors-surface-mount-1k-1kohm-102-5-1-10w-rohs-/231018648475">1k&Omega; resistors</a> <i>Cost: $0.99 for 50</i></li>
+  <li><a href="http://www.ebay.com/itm/15pcs-red-0603-super-bright-smd-led-/121111954334">LEDs</a> <i>Cost: $0.99 for 15</i></li>
+  <li><a href="http://www.ebay.com/itm/50-x-momentary-tact-tactile-push-button-switch-smd-smt-surface-mount-3x3-5x2mm-/230914271344">buttons</a> <i>Cost: $6+$1 for 50</i></li>
 </ul>
-<p>What&#8217;s missing, besides antistatic + bubble bags (which are ordered),
-  are the PCBs.  I have decided to open a patch window for now, given
-  that we are waiting on parts anyways.  That means we can do some last
-  changes to the design and layout, do a small prototype run using
-  SeeedStudio or iTeadStudio, and still get the PCBs made in time.</p>
-<p>If anybody has some not-too-intrusive suggestions for layout change,
-  now would be the time to speak up.  Next opportunity will be after
-  the prototype run when we collect experiences and feedback.</p>
-<p>I have two changes I want to look into:</p>
-<ul>
-  <li>move the ferrite beads from the power input section to the analog
-    supply lines of the MCU</li>
-  <li>allow operation fro LiPo without Schottky diode</li>
-</ul>
+<h2>Assembly</h2>
+<p>Check out this <a href="http://imgur.com/a/3qSYL">soldering stop motion sequence</a> taken while hand
+  soldering a MC HCK.</p>
+<iframe class="imgur-album" width="100%" height="550" frameborder="0" src="http://imgur.com/a/3qSYL/embed"></iframe>
+<h2>Software</h2>
+<p>Once your MC HCK boards are soldered, use the <a href="https://github.com/mchck/mchck/wiki/Getting-Started">wiki to get started</a> with
+  the software library.</p>
 </div>
 
 
@@ -148,7 +151,7 @@
   
 
 
-<time datetime="2013-07-19T00:00:00+02:00" pubdate data-updated="true">Jul 19<span>th</span>, 2013</time>
+<time datetime="2013-08-06T00:00:00+02:00" pubdate data-updated="true">Aug 6<span>th</span>, 2013</time>
       
 
 
@@ -156,7 +159,7 @@
     
       <div class="sharing">
   
-  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://mchck.org/blog/2013-07-19-First-parts-for-prototypes/" data-via="MCHCK" data-counturl="http://mchck.org/blog/2013-07-19-First-parts-for-prototypes/" >Tweet</a>
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://mchck.org/blog/2013-08-06-self-built-mchck-for-5-dollars/" data-via="MCHCK" data-counturl="http://mchck.org/blog/2013-08-06-self-built-mchck-for-5-dollars/" >Tweet</a>
   
   
   
@@ -165,10 +168,8 @@
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2013-06-25-Prototypes-Available/" title="Previous Post: Prototypes Available">&laquo; Prototypes Available</a>
+        <a class="basic-alignment left" href="/blog/2013-08-01-design-revision-5-has-landed/" title="Previous Post: Design revision 5 has landed">&laquo; Design revision 5 has landed</a>
       
-      
-        <a class="basic-alignment right" href="/blog/2013-07-27-prototype_kit_funding_succesful/" title="Next Post: Prototype kit funding succesful!">Prototype kit funding succesful! &raquo;</a>
       
     </p>
   </footer>

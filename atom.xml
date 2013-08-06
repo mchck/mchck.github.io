@@ -4,7 +4,7 @@
   <title><![CDATA[mchck.org]]></title>
   <link href="http://mchck.org/atom.xml" rel="self"/>
   <link href="http://mchck.org/"/>
-  <updated>2013-08-06T16:59:30+02:00</updated>
+  <updated>2013-08-06T19:42:48+02:00</updated>
   <id>http://mchck.org/</id>
   <author>
     <name><![CDATA[Simon Schubert and the MC HCK project]]></name>
@@ -12,6 +12,50 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Self built MC HCK for $5]]></title>
+    <link href="http://mchck.org/blog/2013-08-06-self-built-mchck-for-5-dollars/"/>
+    <updated>2013-08-06T00:00:00+02:00</updated>
+    <id>http://mchck.org/blog/self-built-mchck-for-5-dollars</id>
+    <content type="html"><![CDATA[<p><img src="http://mchck.org/images/mchck-r4-about-to-assemble.jpg" alt="/images/mchck-r4-about-to-assemble.jpg" /></p>
+<p>From the beginning, the MC HCK was conceived to be not only cheap to
+  produce and sell, but it was also conceived to be buildable at home,
+  at a low cost.  In this post, we&#8217;ll show how to build a MC HCK at
+  home.</p>
+<!-- more -->
+<h2>Getting the Parts</h2>
+<p>All required and optional parts are listed in the <a href="https://github.com/mchck/mchck/wiki/BOM">BOM</a>.  Let&#8217;s quickly
+  go over how to get the required ones.</p>
+<h3>PCB</h3>
+<p>The MC HCK boards can easily be ordered from <a href="http://www.seeedstudio.com/depot/fusion-pcb-service-2-layers-p-835.html">the</a> <a href="http://imall.iteadstudio.com/open-pcb/pcb-prototyping/im120418001.html">usual</a> <a href="http://www.hackvana.com/store/">suspects</a> in
+  China.  Just download the <a href="https://github.com/mchck/mchck/tree/fab/hardware">fabrication gerbers</a> and attach them to your
+  order; usually you will have to create a zip file.  Now wait 10 days
+  or so until your PCBs arrive. <i>Cost: $10 + shipping for 10 boards</i></p>
+<h3>MCU</h3>
+<p>You can <a href="http://www.freescale.com/webapp/search.partparamdetail.framework?PART_NUMBER%3DMK20DX128VLF5&amp;buyNow%3Dtrue#Ordering_Information">sample</a> a compatible MCU directly from Freescale. <i>Cost: $5 for 5 MCUs.</i></p>
+<h3>Passives</h3>
+<p>These are common parts, and many people will already have them in some
+  way or another.  The SMT parts are 0603 size, but the pads are large
+  enough to take 0805 parts as well.  In case you&#8217;re still missing one
+  or the other part, below is a list of possible eBay sources:</p>
+<ul>
+  <li><a href="http://www.ebay.com/itm/100-smd-capacitor-0603-kr-x7r-9bb-104-0-1uf-100nf-m-/390325999203">100nf decoupling caps</a> <i>Cost: $1.85 for 100</i></li>
+  <li><a href="http://www.ebay.com/itm/20x-smd-capacitor-0603-zr-y5v-7bb-225-2-2uf-16v-new-m-/320700482046">2.2&mu;f regulator caps</a> <i>Cost: $1.89 for 20</i></li>
+  <li><a href="http://www.ebay.com/itm/100-pcs-smd-chip-surface-mount-0603-resistor-33-ohm-/120823881206">33&Omega; resistors</a> <i>Cost: $2 for 100</i></li>
+  <li><a href="http://www.ebay.com/itm/50-smd-smt-0603-chip-resistors-surface-mount-1k-1kohm-102-5-1-10w-rohs-/231018648475">1k&Omega; resistors</a> <i>Cost: $0.99 for 50</i></li>
+  <li><a href="http://www.ebay.com/itm/15pcs-red-0603-super-bright-smd-led-/121111954334">LEDs</a> <i>Cost: $0.99 for 15</i></li>
+  <li><a href="http://www.ebay.com/itm/50-x-momentary-tact-tactile-push-button-switch-smd-smt-surface-mount-3x3-5x2mm-/230914271344">buttons</a> <i>Cost: $6+$1 for 50</i></li>
+</ul>
+<h2>Assembly</h2>
+<p>Check out this <a href="http://imgur.com/a/3qSYL">soldering stop motion sequence</a> taken while hand
+  soldering a MC HCK.</p>
+<iframe class="imgur-album" width="100%" height="550" frameborder="0" src="http://imgur.com/a/3qSYL/embed"></iframe>
+<h2>Software</h2>
+<p>Once your MC HCK boards are soldered, use the <a href="https://github.com/mchck/mchck/wiki/Getting-Started">wiki to get started</a> with
+  the software library.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Design revision 5 has landed]]></title>
