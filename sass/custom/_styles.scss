@@ -80,6 +80,9 @@ ul.horizontal {
 }
 
 article[role=article], div.blog-index > article {
+    h1, h2, h3, h4, h5 {
+        clear: both;
+    }
     header + .entry-content > p:first-child, header + p {
         img {
             @media only screen and (min-width: 480px) {
