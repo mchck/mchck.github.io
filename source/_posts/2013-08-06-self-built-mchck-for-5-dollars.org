@@ -42,8 +42,8 @@ or the other part, below is a list of possible eBay sources:
 
 ** Assembly
 
-Check out this [[http://imgur.com/a/3qSYL][soldering stop motion sequence]] taken while hand
-soldering a MC HCK.
+Check out this soldering stop motion sequence taken while hand
+soldering a MC HCK:
 
 #+HTML: <iframe class="imgur-album" width="100%" height="550" frameborder="0" src="http://imgur.com/a/3qSYL/embed"></iframe>
 
