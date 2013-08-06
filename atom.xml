@@ -4,7 +4,7 @@
   <title><![CDATA[mchck.org]]></title>
   <link href="http://mchck.org/atom.xml" rel="self"/>
   <link href="http://mchck.org/"/>
-  <updated>2013-08-06T19:42:48+02:00</updated>
+  <updated>2013-08-06T20:19:47+02:00</updated>
   <id>http://mchck.org/</id>
   <author>
     <name><![CDATA[Simon Schubert and the MC HCK project]]></name>
@@ -48,8 +48,8 @@
   <li><a href="http://www.ebay.com/itm/50-x-momentary-tact-tactile-push-button-switch-smd-smt-surface-mount-3x3-5x2mm-/230914271344">buttons</a> <i>Cost: $6+$1 for 50</i></li>
 </ul>
 <h2>Assembly</h2>
-<p>Check out this <a href="http://imgur.com/a/3qSYL">soldering stop motion sequence</a> taken while hand
-  soldering a MC HCK.</p>
+<p>Check out this soldering stop motion sequence taken while hand
+  soldering a MC HCK:</p>
 <iframe class="imgur-album" width="100%" height="550" frameborder="0" src="http://imgur.com/a/3qSYL/embed"></iframe>
 <h2>Software</h2>
 <p>Once your MC HCK boards are soldered, use the <a href="https://github.com/mchck/mchck/wiki/Getting-Started">wiki to get started</a> with
