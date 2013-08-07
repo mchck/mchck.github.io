@@ -97,5 +97,9 @@ disqus_show_comment_count: false
 # Google Analytics
 google_analytics_tracking_id:
 
+# Piwik Analytics
+piwik_url: https://stats.mchck.org
+piwik_site_id: 1
+
 # Facebook Like
 facebook_like: false
