@@ -1,6 +1,16 @@
 // Here you can easily change font faces which are used in your site.
-// To give it a try, uncomment some of the lines below rebuild your blog, and see how it works. your sites's.
+// To give it a try, uncomment some of the lines below rebuild your blog, and see how it works.
 // If you love to use Web Fonts, you also need to add some lines to source/_includes/custom/head.html
+
+@include font-face("PT Sans", font-files("PTS55F.woff", "PTS55F.ttf", "PTS55F.svg"), "PTS55F.eot", normal, regular);
+@include font-face("PT Sans", font-files("PTS56F.woff", "PTS56F.ttf", "PTS56F.svg"), "PTS56F.eot", normal, italic);
+@include font-face("PT Sans", font-files("PTS75F.woff", "PTS75F.ttf", "PTS75F.svg"), "PTS75F.eot", bold, regular);
+@include font-face("PT Sans", font-files("PTS76F.woff", "PTS76F.ttf", "PTS76F.svg"), "PTS76F.eot", bold, italic);
+
+@include font-face("PT Serif", font-files("PTF55F.woff", "PTF55F.ttf", "PTF55F.svg"), "PTF55F.eot", normal, regular);
+@include font-face("PT Serif", font-files("PTF56F.woff", "PTF56F.ttf", "PTF56F.svg"), "PTF56F.eot", normal, italic);
+@include font-face("PT Serif", font-files("PTF75F.woff", "PTF75F.ttf", "PTF75F.svg"), "PTF75F.eot", bold, regular);
+@include font-face("PT Serif", font-files("PTF76F.woff", "PTF76F.ttf", "PTF76F.svg"), "PTF76F.eot", bold, italic);
 
 //$sans: "Optima", sans-serif;
 //$serif: "Baskerville", serif;
