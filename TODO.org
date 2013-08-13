@@ -1,3 +1,5 @@
+#+DRAWERS: REQUIREMENTS
+
 * Homepage migration
 ** TODO check all links
 ** TODO description / about
@@ -5,36 +7,78 @@
 
 * New content
 ** TODO describe options
-- [ ] staggered pads
-- [ ] lipo
-  - LiPo charger
-  - charge status pad
-  - jst connector
-- [ ] USB
-  - (main) USB A connector
-  - (secondary) USB micro AB connector
-  - USB header (cut tab)
-  - solder jumpers
-- [ ] SPI flash (+ footprint)
-- [ ] analog section
-  - [ ] ferrite beads
-  - [ ] VREF
-  - [ ] C9/SJ4 combo footprint
-- [ ] mounting hole
-- [ ] power options
-  - 3-way voltage regulator
-  - VRAW + USB diode
-- [ ] nRF24l01 board compat
-  - SPI dual allocation
-- [ ] debugging/programming
-- [ ] crystal options
-  - internal resonator good enough for USB (measure)
-  - high freq osc (integrated caps)
-  - RTC pads
-- [ ] layout goals
+*** [ ] General Layout /o
+- staggered pads
+- layout goals
   - short ground loops
-  - quiet analog section?
   - design rules: can be fabbed in china
-- [ ] software library
-  - linker scripts
-  - makefile infrastructure
+  - quiet analog section (see later post)
+  - pack as much functionality as possible
+- mounting hole
+
+*** [ ] Power options
+:REQUIREMENTS:
+- [X] LDO
+- [X] buck
+- [ ] boost
+:END:
+- 3-way voltage regulator
+  - linear
+  - buck
+  - boost
+- VRAW + USB diode
+
+*** [ ] LiPo
+:REQUIREMENTS:
+- [X] lipo charger
+- [X] lipo battery
+:END:
+- LiPo charger
+- charge status pad
+- jst connector
+
+*** [ ] Analog section
+:REQUIREMENTS:
+- [ ] ferrites
+- [ ] ADC lib
+:END:
+- ferrite beads
+- VREF
+- C9/SJ4 combo footprint
+- measure noise?
+
+*** [ ] Crystal options
+:REQUIREMENTS:
+- [ ] ADC lib for temperature
+- [ ] clock calibration code
+- [ ] EEPROM lib for storage
+:END:
+- internal resonator good enough for USB (measure)
+- high freq osc (integrated caps)
+- RTC pads
+
+*** [ ] USB
+- (main) USB A connector
+- (secondary) USB micro AB connector
+- USB header (cut tab)
+- solder jumpers
+
+*** [ ] SPI flash
+:REQUIREMENTS:
+- [ ] SPI lib
+:END:
+- double footprint
+
+*** [ ] nRF24l01 board compat
+:REQUIREMENTS:
+- [ ] SPI lib
+:END:
+- SPI dual allocation
+
+*** [ ] debugging/programming
+XXX what is this about?
+
+*** [ ] Software library
+- provide efficient application API, instead of accessing hardware
+- linker scripts
+- makefile infrastructure
