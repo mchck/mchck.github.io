@@ -35,6 +35,7 @@
 :END:
 - LiPo charger
 - charge status pad
+- disable charge with PROG = high/float
 - jst connector
 
 *** [ ] Analog section
