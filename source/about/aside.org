@@ -1,6 +1,6 @@
 The MC HCK (pronounced: "McHack" [m\aelig{}k h\aelig{}k]) is a
 /small/, /cheap/, and /versatile/ ARM Cortex-M4 based microcontroller
-platform.
+platform, based on the Freescale MK20DX32VLF5.
 
 The MC HCK is entirely /open source/ and created by the community,
 from geeks, for geeks.
