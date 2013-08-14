@@ -4,6 +4,22 @@
 i { @extend em; }
 b { @extend strong; }
 
+dl {
+    @extend ul;
+    dt {
+        display: run-in;
+        @extend strong;
+        padding-right: 0.5em;
+    }
+    dt:after {
+        content: ":";
+    }
+    dd {
+        text-indent: -3em;
+        margin-left: 3em;
+    }
+}
+
 body > header {
     background-image: url('/assets/mchck-banner.jpg');
     background-size: cover;
