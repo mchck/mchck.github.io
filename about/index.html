@@ -85,7 +85,20 @@
   (up to 16V), a mounting screw, a 2.4GHz radio module, and more!</p>
 <p>The MC HCK is <i>entirely open source</i>, both hardware and software.
   Check out our <a href="https://github.com/mchck/mchck/wiki/Schematic-and-layout">project repository</a> to get the latest KiCad designs or
-  <a href="https://github.com/mchck/mchck/tree/fab/hardware">fabrication outputs</a>.  <i>Everybody is encouraged to build MC HCKs!</i></p>
+  <a href="https://github.com/mchck/mchck/tree/fab/hardware">fabrication outputs</a>.  <i>Everybody is <a href="/blog/2013-08-06-self-built-mchck-for-5-dollars/">encouraged to build</a> MC HCKs!</i></p>
+<h2>Quick Specs</h2>
+<dl>
+  <dt>Dimensions</dt><dd>50mm x 20mm</dd>
+  <dt>Platform</dt><dd>ARM Cortex-M4 (DSP, no FPU)</dd>
+  <dt>MCU</dt><dd>Freescale MK20DX32VLF5: 8KB RAM, 32KB program flash + 32KB
+    data flash</dd>
+  <dt>Interface</dt><dd>USB, I2C, SPI, UART, I2S</dd>
+  <dt>Programming</dt><dd>via USB bootloader</dd>
+  <dt>Debugging</dt><dd>A second MC HCK can be used as debug adapter</dd>
+  <dt>Board options</dt><dd>mounting hole, LiPo charger, nRF24L01+ directly
+    pluggable, up to 8Mbit flash, LDO, buck regulator,
+    boost regulator, RTC crystal</dd>
+</dl>
 <h2>The name</h2>
 <p>Like the board itself, the name is versatile and can be used in
   different ways.  &#8220;MC&#8221; is short for microcontroller, but it also makes
