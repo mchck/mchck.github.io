@@ -1,0 +1,106 @@
+---
+layout: post
+title: "Self hosted toolchain: The MC HCK as SWD adapter"
+date: "2013-08-13 23:34:40 +0200"
+author: Simon Schubert
+published: false
+---
+
+[[/images/mchck-r4-mchck.jpg]]
+
+I am happy to announce that we have a self-hosted toolchain: The MC
+HCK can now act as SWD debug adapter for other MC HCKs, without
+requiring any other external debug adapters or development boards.
+
+The SWD interface is a debug interface, similar to JTAG; however, it
+only requires two signal lines, and it is specific to ARM processors.
+In the MC HCK toolchain, we use SWD to initially program the USB
+bootloader, as well as to debug code.  See below for a short example
+session.
+
+#+HTML: <!-- more -->
+
+With this, the MC HCK project has reached an important step on the way
+towards creating an entirely free (FLOSS) and inexpensive modern
+microcontroller platform.
+
+
+*** Bootstrapping yourself
+
+Of course, if you are starting from zero, with only blank, [[/blog/2013-08-06-self-built-mchck-for-5-dollars/][self-built
+MC HCKs]], you will face a chicken-and-egg problem: how to program the
+first MC HCK?  Head over to the wiki, which explains [[https://github.com/mchck/mchck/wiki/Getting-Started][how to get
+started]] using other SWD programmer options, such as the Bus Pirate or
+the Bus Blaster.  And thanks to our portable SWD bitbang code, other
+development boards will also be able to bootstrap the MC HCK
+toolchain, starting (very soon!) with an Arduino sketch.
+
+Even though the MC HCK SWD adapter could be used to connect to other
+microcontrollers as well, there is no specific code support yet.  But
+our open source friends have you covered: check out [[http://www.versaloon.com/][Versaloon]] or the
+great [[http://www.blacksphere.co.nz/main/blackmagic][Black Magic Probe]], which directly presents as GDB target and
+whose source helped a lot in developing the MC HCK SWD toolchain.
+
+
+** Debugging a MC HCK
+
+Debugging a MC HCK via SWD is as easy as using gdb locally:
+
+#+BEGIN_EXAMPLE
+% make gdb
+ruby ../../toolchain//../programmer/gdbserver.rb name=mchck:dev=/dev/serial/by-id/usb-mchck.org_MC_HCK_SWD_adapter-if00 -- arm-none-eabi-gdb -readnow -ex 'target extended-remote :1234' blink.elf
+GNU gdb (Linaro GDB) 7.6-2013.05
+Copyright (C) 2013 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "--host=x86_64-unknown-linux-gnu --target=arm-none-eabi".
+For bug reporting instructions, please see:
+<http://bugs.launchpad.net/gdb-linaro/>...
+Reading symbols from /home/corecode/devel/electronics/mchck/examples/blink/blink.elf...expanding to full symbols...done.
+Remote debugging using :1234
+0x00000fe8 in main () at blink.c:7
+7                       for (volatile int i = 1000000; i > 0; --i)
+(gdb) list
+2
+3       int
+4       main(void)
+5       {
+6               for (;;) {
+7                       for (volatile int i = 1000000; i > 0; --i)
+8                               /* NOTHING */;
+9                       onboard_led(ONBOARD_LED_TOGGLE);
+10              }
+11      }
+(gdb) p i
+$1 = 33664
+(gdb) break onboard_led
+Breakpoint 1 at 0x10ee: file ../../toolchain//lib/mchck/onboard-led.c, line 6.
+(gdb) c
+Continuing.
+
+Breakpoint 1, onboard_led (state=ONBOARD_LED_TOGGLE)
+    at ../../toolchain//lib/mchck/onboard-led.c:6
+6               gpio_mode(GPIO_PTC0, GPIO_MODE_OUTPUT | GPIO_MODE_DRIVE_HIGH);
+(gdb) list
+1       #include <mchck.h>
+2
+3       void
+4       onboard_led(enum onboard_led_state state)
+5       {
+6               gpio_mode(GPIO_PTC0, GPIO_MODE_OUTPUT | GPIO_MODE_DRIVE_HIGH);
+7
+8               if (state == ONBOARD_LED_OFF || state == ONBOARD_LED_ON)
+9                       gpio_write(GPIO_PTC0, state);
+10              else
+(gdb) q
+A debugging session is active.
+
+        Inferior 1 [Remote target] will be detached.
+
+Quit anyway? (y or n) y
+Detaching from program: /home/corecode/devel/electronics/mchck/examples/blink/blink
+.elf, Remote target
+Quitting: Remote communication error.  Target disconnected.: Broken pipe.
+#+END_EXAMPLE

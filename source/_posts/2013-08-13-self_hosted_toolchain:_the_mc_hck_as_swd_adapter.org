@@ -1,6 +1,0 @@
----
-layout: post
-title: "Self hosted toolchain: The MC HCK as SWD adapter"
-date: "2013-08-13 23:34:40 +0200"
-published: false
----
