@@ -4,6 +4,14 @@
 i { @extend em; }
 b { @extend strong; }
 
+.force-wrap {
+    word-break: break-all;
+};
+
+pre {
+    @extend .force-wrap;
+}
+
 dl {
     @extend ul;
     dt {
