@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>MC HCK, the hacker's microcontroller board: small. cheap. versatile. open source. - mchck.org</title>
+  <title>Self hosted toolchain: The MC HCK as SWD adapter - mchck.org</title>
   <meta name="author" content="Simon Schubert and the MC HCK project">
 
   
-  <meta name="description" content="ARM Cortex-M4 microcontroller board. small. cheap. versatile. open source.">
+  <meta name="description" content="I am happy to announce that we have a self-hosted toolchain: The MC HCK can now act as SWD debug adapter for other MC HCKs, without requiring any &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://mchck.org">
+  <link rel="canonical" href="http://mchck.org/blog/2013-08-13-self_hosted_toolchain_the_mc_hck_as_swd_adapter">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="mchck.org" type="application/atom+xml">
@@ -62,15 +62,12 @@
 </nav>
   <div id="main">
     <div id="content">
-      <div class="blog-index">
+      <div>
+<article class="hentry" role="article">
   
-  
-  
-    <article>
-      
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2013-08-13-self_hosted_toolchain_the_mc_hck_as_swd_adapter/">Self Hosted Toolchain: The MC HCK as SWD Adapter</a></h1>
+      <h1 class="entry-title">Self Hosted Toolchain: The MC HCK as SWD Adapter</h1>
     
     
       <p class="meta">
@@ -93,7 +90,7 @@
   </header>
 
 
-  <div class="entry-content"><p><img src="/images/mchck-r4-mchck.jpg" alt="/images/mchck-r4-mchck.jpg" /></p>
+<div class="entry-content"><p><img src="/images/mchck-r4-mchck.jpg" alt="/images/mchck-r4-mchck.jpg" /></p>
 <p>I am happy to announce that we have a self-hosted toolchain: The MC
   HCK can now act as SWD debug adapter for other MC HCKs, without
   requiring any other external debug adapters or development boards.</p>
@@ -102,71 +99,94 @@
   In the MC HCK toolchain, we use SWD to initially program the USB
   bootloader, as well as to debug code.  See below for a short example
   session.</p>
+<!-- more -->
+<p>With this, the MC HCK project has reached an important step on the way
+  towards creating an entirely free (FLOSS) and inexpensive modern
+  microcontroller platform.</p>
+<h3>Bootstrapping yourself</h3>
+<p>Of course, if you are starting from zero, with only blank, <a href="/blog/2013-08-06-self-built-mchck-for-5-dollars/">self-built
+  MC HCKs</a>, you will face a chicken-and-egg problem: how to program the
+  first MC HCK?  Head over to the wiki, which explains <a href="https://github.com/mchck/mchck/wiki/Getting-Started">how to get
+  started</a> using other SWD programmer options, such as the Bus Pirate or
+  the Bus Blaster.  And thanks to our portable SWD bitbang code, other
+  development boards will also be able to bootstrap the MC HCK
+  toolchain, starting (very soon!) with an Arduino sketch.</p>
+<p>Even though the MC HCK SWD adapter could be used to connect to other
+  microcontrollers as well, there is no specific code support yet.  But
+  our open source friends have you covered: check out <a href="http://www.versaloon.com/">Versaloon</a> or the
+  great <a href="http://www.blacksphere.co.nz/main/blackmagic">Black Magic Probe</a>, which directly presents as GDB target and
+  whose source helped a lot in developing the MC HCK SWD toolchain.</p>
+<h2>Debugging a MC HCK</h2>
+<p>Debugging a MC HCK via SWD is as easy as using gdb locally:</p>
+<pre class="example">
+% make gdb
+ruby ../../toolchain//../programmer/gdbserver.rb name=mchck:dev=/dev/serial/by-id/usb-mchck.org_MC_HCK_SWD_adapter-if00 -- arm-none-eabi-gdb -readnow -ex &#39;target extended-remote :1234&#39; blink.elf
+GNU gdb (Linaro GDB) 7.6-2013.05
+Copyright (C) 2013 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later &lt;http://gnu.org/licenses/gpl.html&gt;
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type &quot;show copying&quot;
+and &quot;show warranty&quot; for details.
+This GDB was configured as &quot;--host=x86_64-unknown-linux-gnu --target=arm-none-eabi&quot;.
+For bug reporting instructions, please see:
+&lt;http://bugs.launchpad.net/gdb-linaro/&gt;...
+Reading symbols from /home/corecode/devel/electronics/mchck/examples/blink/blink.elf...expanding to full symbols...done.
+Remote debugging using :1234
+0x00000fe8 in main () at blink.c:7
+7                       for (volatile int i = 1000000; i &gt; 0; --i)
+(gdb) list
+2
+3       int
+4       main(void)
+5       {
+6               for (;;) {
+7                       for (volatile int i = 1000000; i &gt; 0; --i)
+8                               /* NOTHING */;
+9                       onboard_led(ONBOARD_LED_TOGGLE);
+10              }
+11      }
+(gdb) p i
+$1 = 33664
+(gdb) break onboard_led
+Breakpoint 1 at 0x10ee: file ../../toolchain//lib/mchck/onboard-led.c, line 6.
+(gdb) c
+Continuing.
+
+Breakpoint 1, onboard_led (state=ONBOARD_LED_TOGGLE)
+    at ../../toolchain//lib/mchck/onboard-led.c:6
+6               gpio_mode(GPIO_PTC0, GPIO_MODE_OUTPUT | GPIO_MODE_DRIVE_HIGH);
+(gdb) list
+1       #include &lt;mchck.h&gt;
+2
+3       void
+4       onboard_led(enum onboard_led_state state)
+5       {
+6               gpio_mode(GPIO_PTC0, GPIO_MODE_OUTPUT | GPIO_MODE_DRIVE_HIGH);
+7
+8               if (state == ONBOARD_LED_OFF || state == ONBOARD_LED_ON)
+9                       gpio_write(GPIO_PTC0, state);
+10              else
+(gdb) q
+A debugging session is active.
+
+        Inferior 1 [Remote target] will be detached.
+
+Quit anyway? (y or n) y
+Detaching from program: /home/corecode/devel/electronics/mchck/examples/blink/blink
+.elf, Remote target
+Quitting: Remote communication error.  Target disconnected.: Broken pipe.
+</pre>
 </div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2013-08-13-self_hosted_toolchain_the_mc_hck_as_swd_adapter/">Read on &rarr;</a>
-    </footer>
-  
 
 
-    </article>
-  
-  
-    <article>
+  <footer>
+    <p class="meta">
       
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013-08-06-self-built-mchck-for-5-dollars/">Self Built MC HCK for $5</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
   
 
+<span class="byline author vcard">Posted by <span class="fn">Simon Schubert</span></span>
 
-<time datetime="2013-08-06T00:00:00+02:00" pubdate data-updated="true">Aug 6<span>th</span>, 2013</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><img src="/images/mchck-r4-about-to-assemble.jpg" alt="/images/mchck-r4-about-to-assemble.jpg" /></p>
-<p>From the beginning, the MC HCK was conceived to be not only cheap to
-  produce and sell, but it was also conceived to be buildable at home,
-  at a low cost.  In this post, we&#8217;ll show how to build a MC HCK at
-  home.</p>
-</div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2013-08-06-self-built-mchck-for-5-dollars/">Read on &rarr;</a>
-    </footer>
-  
-
-
-    </article>
-  
-  
-    <article>
       
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013-08-01-design-revision-5-has-landed/">Design Revision 5 Has Landed</a></h1>
-    
-    
-      <p class="meta">
-        
 
 
 
@@ -178,168 +198,32 @@
   
 
 
-<time datetime="2013-08-01T00:22:00+02:00" pubdate data-updated="true">Aug 1<span>st</span>, 2013</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><a href="/images/mchck-r5-composite.png"><img src="/images/mchck-r5-composite.png" alt="/images/mchck-r5-composite.png" /></a></p>
-<p>Given that we are still waiting for components for the prototype kit,
-  I used the opportunity to do another design iteration.  The new design
-  features (hopefully) improved analog noise performance, and a
-  rearranged pin layout that allows to use the nRF24L01+ RF boards
-  directly on SPI.</p>
-<p>As usual, you can look at the <a href="https://github.com/mchck/mchck/wiki/Schematic-and-layout">schematics and design on the wiki</a> or
-  <a href="https://github.com/mchck/mchck/tree/fab/hardware">access the fabrication outputs</a> directly.</p>
-<p>During the coming weeks, I will do a post series explaining the
-  gimmicks and features of the MC HCK.</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
+<time datetime="2013-08-13T23:34:40+02:00" pubdate data-updated="true">Aug 13<span>th</span>, 2013</time>
       
-  <header>
+
+
+    </p>
     
-      <h1 class="entry-title"><a href="/blog/2013-07-27-prototype_kit_funding_succesful/">Prototype Kit Funding Succesful!</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
+      <div class="sharing">
   
-
-
-<time datetime="2013-07-27T00:27:50+02:00" pubdate data-updated="true">Jul 27<span>th</span>, 2013</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><i>This text is an adapted version of what has been mailed to the
-  prototype supporters.</i></p>
-<p>Thanks to all supporters for ordering a MC HCK prototype kit and
-  supporting the project!  The funding has been successful: almost all
-  kits have been sold.</p>
-<p>There are a few things that will help make the MC HCK a success:</p>
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://mchck.org/blog/2013-08-13-self_hosted_toolchain_the_mc_hck_as_swd_adapter/" data-via="MCHCK" data-counturl="http://mchck.org/blog/2013-08-13-self_hosted_toolchain_the_mc_hck_as_swd_adapter/" >Tweet</a>
+  
+  
+  
 </div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2013-07-27-prototype_kit_funding_succesful/">Read on &rarr;</a>
-    </footer>
-  
 
-
-    </article>
-  
-  
-    <article>
+    
+    <p class="meta">
       
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013-07-19-First-parts-for-prototypes/">First Parts for Prototypes</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-07-19T00:00:00+02:00" pubdate data-updated="true">Jul 19<span>th</span>, 2013</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Everything is progressing smoothly with the prototypes!  We&#8217;ve sold
-  40 prototype kits so far, which means that this undertaking will
-  really happen.</p>
-<p>Today, the first parts for the kits arrived:</p>
-<p><img src="https://farm6.staticflickr.com/5321/9318462017_2c2b164e6e_c_d.jpg" alt="https://farm6.staticflickr.com/5321/9318462017_2c2b164e6e_c_d.jpg" /></p>
-</div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2013-07-19-First-parts-for-prototypes/">Read on &rarr;</a>
-    </footer>
-  
-
-
-    </article>
-  
-  
-    <article>
+        <a class="basic-alignment left" href="/blog/2013-08-06-self-built-mchck-for-5-dollars/" title="Previous Post: Self built MC HCK for $5">&laquo; Self built MC HCK for $5</a>
       
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013-06-25-Prototypes-Available/">Prototypes Available</a></h1>
-    
-    
-      <p class="meta">
-        
+      
+    </p>
+  </footer>
+</article>
 
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-06-25T00:00:00+02:00" pubdate data-updated="true">Jun 25<span>th</span>, 2013</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>We are happy to be able to announce the first prototype MC HCK dev
-  kits.  These prototype kits are meant for early adopters, who would
-  like to evaluate and verify the electrical design of the MC HCK, and
-  those who want to contribute to the growing software library.</p>
 </div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2013-06-25-Prototypes-Available/">Read on &rarr;</a>
-    </footer>
-  
 
-
-    </article>
-  
-  <div class="pagination">
-    
-    <a href="/blog/archives">Blog Archives</a>
-    
-  </div>
-</div>
 <aside class="sidebar">
   
     <section>
@@ -404,7 +288,7 @@
 <section>
   <h1>GitHub Repos</h1>
   <ul id="gh_repos">
-    <li class="loading">Status updating&#8230;</li>
+    <li class="loading">Status updating...</li>
   </ul>
   
   <a href="https://github.com/mchck">@mchck</a> on GitHub
@@ -437,6 +321,7 @@
 
   
 </aside>
+
 
     </div>
   </div>
