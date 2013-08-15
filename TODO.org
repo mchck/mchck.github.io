@@ -80,6 +80,7 @@
 XXX what is this about?
 
 *** [ ] Software library
+- VUSB
 - provide efficient application API, instead of accessing hardware
 - linker scripts
 - makefile infrastructure
