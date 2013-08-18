@@ -42,4 +42,4 @@ the prototype run when we collect experiences and feedback.
 I have two changes I want to look into:
 - move the ferrite beads from the power input section to the analog
   supply lines of the MCU
-- allow operation fro LiPo without Schottky diode
+- allow operation from LiPo without Schottky diode
