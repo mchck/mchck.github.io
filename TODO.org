@@ -7,7 +7,7 @@
 
 * New content
 ** TODO describe options
-*** [ ] General Layout /o
+*** General Layout /o
 - staggered pads
 - layout goals
   - short ground loops
@@ -16,7 +16,7 @@
   - pack as much functionality as possible
 - mounting hole
 
-*** [ ] Power options
+*** Power options
 :REQUIREMENTS:
 - [X] LDO
 - [X] buck
@@ -28,17 +28,13 @@
   - boost
 - VRAW + USB diode
 
-*** [ ] LiPo
-:REQUIREMENTS:
-- [X] lipo charger
-- [X] lipo battery
-:END:
+*** LiPo
 - LiPo charger
 - charge status pad
 - disable charge with PROG = high/float
 - jst connector
 
-*** [ ] Analog section
+*** Analog section
 :REQUIREMENTS:
 - [ ] ferrites
 - [ ] ADC lib
@@ -48,7 +44,7 @@
 - C9/SJ4 combo footprint
 - measure noise?
 
-*** [ ] Crystal options
+*** Crystal options
 :REQUIREMENTS:
 - [ ] ADC lib for temperature
 - [ ] clock calibration code
@@ -58,29 +54,31 @@
 - high freq osc (integrated caps)
 - RTC pads
 
-*** [ ] USB
+*** USB
 - (main) USB A connector
 - (secondary) USB micro AB connector
 - USB header (cut tab)
 - solder jumpers
 
-*** [ ] SPI flash
+*** SPI flash
 :REQUIREMENTS:
 - [ ] SPI lib
 :END:
 - double footprint
 
-*** [ ] nRF24l01 board compat
+*** nRF24l01 board compat
 :REQUIREMENTS:
 - [ ] SPI lib
 :END:
 - SPI dual allocation
 
-*** [ ] debugging/programming
+*** debugging/programming
 XXX what is this about?
 
-*** [ ] Software library
+*** Software library
 - VUSB
 - provide efficient application API, instead of accessing hardware
 - linker scripts
 - makefile infrastructure
+
+** TODO soldering video
