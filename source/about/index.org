@@ -24,7 +24,7 @@ for a LiPo charger, SPI flash storage (up to 8MB), voltage regulators
 
 The MC HCK is /entirely open source/, both hardware and software.
 Check out our [[https://github.com/mchck/mchck/wiki/Schematic-and-layout][project repository]] to get the latest KiCad designs or
-[[https://github.com/mchck/mchck/tree/fab/hardware][fabrication outputs]].  /Everybody is [[/blog/2013-08-06-self-built-mchck-for-5-dollars/][encouraged to build]] MC HCKs!/
+[[https://github.com/mchck/mchck/tree/fab][fabrication outputs]].  /Everybody is [[/blog/2013-08-06-self-built-mchck-for-5-dollars/][encouraged to build]] MC HCKs!/
 
 ** Quick Specs
 - Dimensions :: 50mm x 20mm

@@ -16,7 +16,7 @@ rearranged pin layout that allows to use the nRF24L01+ RF boards
 directly on SPI.
 
 As usual, you can look at the [[https://github.com/mchck/mchck/wiki/Schematic-and-layout][schematics and design on the wiki]] or
-[[https://github.com/mchck/mchck-board/tree/fab/hardware][access the fabrication outputs]] directly.
+[[https://github.com/mchck/mchck-board/tree/fab][access the fabrication outputs]] directly.
 
 During the coming weeks, I will do a post series explaining the
 gimmicks and features of the MC HCK.
