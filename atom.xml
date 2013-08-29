@@ -4,7 +4,7 @@
   <title><![CDATA[mchck.org]]></title>
   <link href="http://mchck.org/atom.xml" rel="self"/>
   <link href="http://mchck.org/"/>
-  <updated>2013-08-15T14:04:10+02:00</updated>
+  <updated>2013-08-29T14:07:23+02:00</updated>
   <id>http://mchck.org/</id>
   <author>
     <name><![CDATA[Simon Schubert and the MC HCK project]]></name>
@@ -123,7 +123,7 @@ Quitting: Remote communication error.  Target disconnected.: Broken pipe.
   go over how to get the required ones.</p>
 <h3>PCB</h3>
 <p>The MC HCK boards can easily be ordered from <a href="http://www.seeedstudio.com/depot/fusion-pcb-service-2-layers-p-835.html">the</a> <a href="http://imall.iteadstudio.com/open-pcb/pcb-prototyping/im120418001.html">usual</a> <a href="http://www.hackvana.com/store/">suspects</a> in
-  China.  Just download the <a href="https://github.com/mchck/mchck/tree/fab/hardware">fabrication gerbers</a> and attach them to your
+  China.  Just download the <a href="https://github.com/mchck/mchck-board/tree/fab/hardware">fabrication gerbers</a> and attach them to your
   order; usually you will have to create a zip file.  Now wait 10 days
   or so until your PCBs arrive. <i>Cost: $10 + shipping for 10 boards</i></p>
 <h3>MCU</h3>
@@ -163,7 +163,7 @@ Quitting: Remote communication error.  Target disconnected.: Broken pipe.
   rearranged pin layout that allows to use the nRF24L01+ RF boards
   directly on SPI.</p>
 <p>As usual, you can look at the <a href="https://github.com/mchck/mchck/wiki/Schematic-and-layout">schematics and design on the wiki</a> or
-  <a href="https://github.com/mchck/mchck/tree/fab/hardware">access the fabrication outputs</a> directly.</p>
+  <a href="https://github.com/mchck/mchck-board/tree/fab/hardware">access the fabrication outputs</a> directly.</p>
 <p>During the coming weeks, I will do a post series explaining the
   gimmicks and features of the MC HCK.</p>
 ]]></content>
@@ -238,7 +238,7 @@ Quitting: Remote communication error.  Target disconnected.: Broken pipe.
 <ul>
   <li>move the ferrite beads from the power input section to the analog
     supply lines of the MCU</li>
-  <li>allow operation fro LiPo without Schottky diode</li>
+  <li>allow operation from LiPo without Schottky diode</li>
 </ul>
 ]]></content>
   </entry>
