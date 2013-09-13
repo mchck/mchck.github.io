@@ -2,8 +2,6 @@
 
 * Homepage migration
 ** TODO check all links
-** TODO description / about
-** TODO contact / get involved
 
 * New content
 ** TODO describe options
@@ -17,11 +15,6 @@
 - mounting hole
 
 *** Power options
-:REQUIREMENTS:
-- [X] LDO
-- [X] buck
-- [ ] boost
-:END:
 - 3-way voltage regulator
   - linear
   - buck
@@ -35,10 +28,6 @@
 - jst connector
 
 *** Analog section
-:REQUIREMENTS:
-- [ ] ferrites
-- [ ] ADC lib
-:END:
 - ferrite beads
 - VREF
 - C9/SJ4 combo footprint
@@ -46,7 +35,7 @@
 
 *** Crystal options
 :REQUIREMENTS:
-- [ ] ADC lib for temperature
+- [X] ADC lib for temperature
 - [ ] clock calibration code
 - [ ] EEPROM lib for storage
 :END:
