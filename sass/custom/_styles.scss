@@ -12,6 +12,10 @@ pre {
     @extend .force-wrap;
 }
 
+.highlight pre {
+    @extend .pre-code;
+}
+
 dl {
     @extend ul;
     dt {
