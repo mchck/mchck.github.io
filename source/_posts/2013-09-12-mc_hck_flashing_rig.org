@@ -1,0 +1,153 @@
+---
+layout: post
+title: "MC HCK flashing rig"
+date: "2013-09-12 19:09:07 +0200"
+author: Simon Schubert
+---
+
+[[https://farm8.staticflickr.com/7450/9729390425_2649ff8c0f_h.jpg][/images/mchck-flashing-rig.jpg]]
+
+For the upcoming shipment of the [[/blog/2013-06-25-Prototypes-Available/][prototype kits]], I will have to flash
+the [[https://github.com/mchck/mchck/tree/master/bootloader/usb-dfu][USB bootloader]] to all 250 bare microcontroller chips.  Even though
+we have a [[https://github.com/mchck/mchck/wiki/Getting-Started][detailed description]] on how bootstrap the bootloader, I
+rather have people be able to use their MC HCKs right away.  This
+article describes the flashing rig and software that I built for this
+task.
+
+#+HTML: <!-- more -->
+
+** Design
+
+The rig is built around a TQFP48 ZIF programming socket [[http://item.taobao.com/item.htm?id%3D20093648198&spm%3D2014.12328642.0.0][from TaoBao]],
+combined with a MC HCK, which controls operations and flashes the
+inserted ICs.  After inserting the IC into the socket (use correct
+orientation!) and closing the socket (or pushing down on the IC for
+good contact), a button press signals the controller that a new IC is
+ready to be programmed.  The controller will switch on power for the
+IC, and walk through a programming sequence.  Once that's done, it
+signals success or failure with a green and a red LED.  After that you
+can remove the programmed IC and start over.
+
+*** Button Debounce
+
+The main programming logic starts on the press of a button -- but
+hardware buttons are slightly painful to interface with digital logic
+because buttons tend [[http://www.ganssle.com/debouncing.htm][to bounce]].  Conveniently, the Kinetis K20 MCUs
+have a well-hidden digital filter feature on their digital input pins
+(only PORTD though).  Read the manuals of [[http://cache.freescale.com/files/32bit/doc/ref_manual/K11P80M50SF4RM.pdf][other Freescale MCUs]] until
+you find a description of the registers, and you are set to debounce
+the input.
+
+*** Power Switching
+
+Because the chips might not be seated correctly right away when
+inserting them into the socket, it would be a bad idea to have the
+power supply rails active all the time.  We keep the power switched
+off until the button press signals that a chip has been inserted; then
+we enable power using a PNP transistor on the positive rail.  Once the
+internally pulled up open drain reset line goes positive, we know that
+the IC is done initializing and that it can be programmed.
+
+*** /EzPort/ SPI Flashing
+
+The integrated flash of the Freescale Kinetis microcontrollers can be
+programmed via JTAG or SWD, but the flash can also be programmed using
+an SPI-based protocol.  Freescale calls the feature /EzPort/, but it
+is almost exactly the same protocol you use to talk to [[http://www.winbond.com/NR/rdonlyres/A88DEF07-8303-4617-BAE6-B8A365057DC8/0/W25Q64CV.pdf][serial flash
+ICs]].
+
+We first Read the Status Register (=RDSR, 0x05=) to check if we can
+bulk erase the chip; if bulk erase is enabled, we send a Write Enable
+command (=WREN, 0x06=), followed by a Flash Bulk Erase (=BE, 0xC7=)
+command.  We then poll the status register until the Write In Progress
+bit (=WIP, bit 0=) clears.  After this, we send a sequence of =WREN=,
+Flash Section Program (=SP, 0x02=), and =RDSR= commands to program the
+bootloader, 1024 bytes at a time.  When all data has been programmed,
+we send =RESET, 0xB9= to boot the firmware we just flashed.
+
+*** Done!
+
+The final step is to make sure that we successfully programmed the
+flash.  As a simple solution, we do not flash only the bootloader, but
+also our /Hello, World!/ [[https://github.com/mchck/mchck/blob/master/examples/blink/blink.c][blink example]].  Once the LED pin is driven
+high by the blink firmware, we sense this and declare the flashing to
+be successful.  The power to the target IC is switched off, and a
+green LED comes on to inform the user about the success.  Now we can
+remove this IC and start over with another one.
+
+*** Errors
+
+In the spirit of robust programming, we will have to handle all errors
+or irregularities that come up -- I certainly do not want to brick a
+number of expensive microcontroller chips.  However, hardware often
+does not report errors explicitly, but implicitly by just not doing
+what you expect it to do.  To catch these instances, we use timeouts
+for all operations: if the expected event does not happen until the
+timeout runs out, we must have encountered a problem.  In the interest
+of simplicity, and because we do not know what problems to expect, we
+just signal failure and abort, instead of trying to recover from the
+error.
+
+
+** Application Logic?  State Machine.
+
+A sequence of operations, each following the completion of the
+previous step, combined with possible errors and timeouts -- this
+spells [[https://en.wikipedia.org/wiki/Finite-state_machine][state machine]] all over.  We could write a sequence of =if=,
+=delay= and =goto error;= statements, or we could hand-roll a =switch=
+spaghetti state machine.  Or we use a tool that generates code from a
+clean formal specification: the [[http://www.complang.org/ragel/][Ragel State Machine Compiler]].
+
+Using Ragel, our application logic becomes the following
+specification.  States are =labels:= that transition on =ev_events= to
+the =-> next_state=; different transitions are =expressed | as
+choices=.  Transitions can be conditionalized with the =when=
+operator, but because choices are not exclusive, you need to assign
+priorities (=@2=) to impose an order.  Finally, =>entry_actions= and
+=@transition_actions= fill the state machine with functionality.
+
+#+BEGIN_SRC ragel
+main := (
+
+        start: (
+                ev_button @init_vars @signal_leds_off @enable_power -> starting
+                ),
+        starting: (
+                ev_reset >disable_timeout @enable_spi @check_status -> ezport_running
+                ),
+        ezport_running: (
+                ev_cmd_done when not_write_protected >disable_timeout @bulk_erase @check_status -> erasing
+                ),
+        erasing: (
+                ev_cmd_done when write_busy @2 @check_status -> erasing |
+                ev_cmd_done @0 >disable_timeout @program_sector @check_status -> programming
+                ),
+        programming: (
+                ev_cmd_done when write_busy @2 @check_status -> programming |
+                ev_cmd_done when program_data_left @1 >disable_timeout @program_sector @check_status -> programming |
+                ev_cmd_done @0 >disable_timeout @reset_target -> app_running
+                ),
+        app_running: (
+                ev_led >disable_timeout @disable_power @signal_leds_success -> final
+                )
+        )*
+
+        $err(disable_timeout) $err(disable_power) $err(signal_leds_fail) $err(restart);
+#+END_SRC
+
+Ragel can also output a visualization of the compiled state machine;
+the following image is a slightly cleaned up version, generated from
+the code above.  The transition labels are of the format =event /
+action=; =DEF= matches all unhandled events and originates from the
+error recovery actions.
+
+[[/images/ez-port-flash-statemachine.svg][/images/ez-port-flash-statemachine.svg]]
+
+*** Interrupts ❤ State Machine
+
+State machine programming and asynchronous (completion) interrupts
+work extremely well together.  Any interrupt handler just invokes the
+state machine function with its own unique event, and the state
+machine handles the rest.  If you're interested how all of this fits
+together in actual code, check out [[https://github.com/mchck/mchck/blob/master/bootloader/ez-port-flash/ez-port-flash.rl][the source]] for the flashing rig
+firmware.
