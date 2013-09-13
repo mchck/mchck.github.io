@@ -69,8 +69,8 @@ You can directly commit to buying one prototype kit using the
 following links;  please leave your correct shipping information and
 email address, and make sure the receiving party ID is Simon, 2@0x2c.org.
 
-- [[https://www.paypal.com/cgi-bin/webscr?cmd%3D_xclick&business%3DCCTESJYV55TTQ&lc%3DCH&item_name%3DMC%2BHCK%2Bprototype%2Bkit%2B(USD)&amount%3D60.00&currency_code%3DUSD&button_subtype%3Dservices&bn%3DPP-BuyNowBF:btn_buynowCC_LG.gif:NonHosted][$60, PayPal, USD]]
-- [[https://www.paypal.com/cgi-bin/webscr?cmd%3D_xclick&business%3DCCTESJYV55TTQ&lc%3DCH&item_name%3DMC%2BHCK%2Bprototype%2Bkit%2B(EUR)&amount%3D46.00&currency_code%3DEUR&button_subtype%3Dservices&bn%3DPP-BuyNowBF:btn_buynowCC_LG.gif:NonHosted][€46, PayPal, EUR]]
+- [[https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=CCTESJYV55TTQ&lc=CH&item_name=MC%2BHCK%2Bprototype%2Bkit%2B(USD)&amount=60.00&currency_code=USD&button_subtype=services&bn=PP-BuyNowBF:btn_buynowCC_LG.gif:NonHosted][$60, PayPal, USD]]
+- [[https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=CCTESJYV55TTQ&lc=CH&item_name=MC%2BHCK%2Bprototype%2Bkit%2B(EUR)&amount=46.00&currency_code=EUR&button_subtype=services&bn=PP-BuyNowBF:btn_buynowCC_LG.gif:NonHosted][€46, PayPal, EUR]]
 
 Or visit the Prototypes page at [[https://github.com/mchck/mchck/wiki/Prototypes][Prototypes]] to ponder and commit.
 #+END_COMMENT

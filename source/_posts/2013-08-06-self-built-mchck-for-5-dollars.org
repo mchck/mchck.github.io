@@ -25,7 +25,7 @@ order; usually you will have to create a zip file.  Now wait 10 days
 or so until your PCBs arrive. /Cost: $10 + shipping for 10 boards/
 
 *** MCU
-You can [[http://www.freescale.com/webapp/search.partparamdetail.framework?PART_NUMBER%3DMK20DX128VLF5&buyNow%3Dtrue#Ordering_Information][sample]] a compatible MCU directly from Freescale. /Cost: $5 for 5 MCUs./
+You can [[http://www.freescale.com/webapp/search.partparamdetail.framework?PART_NUMBER=MK20DX128VLF5&buyNow=true#Ordering_Information][sample]] a compatible MCU directly from Freescale. /Cost: $5 for 5 MCUs./
 
 *** Passives
 These are common parts, and many people will already have them in some

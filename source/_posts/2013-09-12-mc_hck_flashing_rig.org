@@ -18,7 +18,7 @@ task.
 
 ** Design
 
-The rig is built around a TQFP48 ZIF programming socket [[http://item.taobao.com/item.htm?id%3D20093648198&spm%3D2014.12328642.0.0][from TaoBao]],
+The rig is built around a TQFP48 ZIF programming socket [[http://item.taobao.com/item.htm?id=20093648198&spm=2014.12328642.0.0][from TaoBao]],
 combined with a MC HCK, which controls operations and flashes the
 inserted ICs.  After inserting the IC into the socket (use correct
 orientation!) and closing the socket (or pushing down on the IC for
