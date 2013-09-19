@@ -50,15 +50,9 @@
 - solder jumpers
 
 *** SPI flash
-:REQUIREMENTS:
-- [ ] SPI lib
-:END:
 - double footprint
 
 *** nRF24l01 board compat
-:REQUIREMENTS:
-- [ ] SPI lib
-:END:
 - SPI dual allocation
 
 *** debugging/programming
