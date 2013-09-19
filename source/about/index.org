@@ -41,8 +41,8 @@ Check out our [[https://github.com/mchck/mchck/wiki/Schematic-and-layout][projec
 
 Like the board itself, the name is versatile and can be used in
 different ways.  "MC" is short for microcontroller, but it also makes
-it sound like a Scottish surname, and Scots are stereotypically cheap.
-We like cheap.  And "HCK" stands for "hacking", "hackers",
+it sound like a Scottish surname, and in the common stereotype, Scots
+are cheap.  We like cheap.  And "HCK" stands for "hacking", "hackers",
 "hackspaces", but shorter, smaller.  Like the MC HCK board itself.
 And MC/HCK is a pun on TCP's SYN/ACK, meaning "ready to go", even a
 step ahead.
