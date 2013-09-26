@@ -1,0 +1,4 @@
+---
+layout: redirect
+location: https://github.com/mchck/mchck/wiki/Prototype-Kit-1-Hackers-Guide
+---
