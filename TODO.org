@@ -4,6 +4,7 @@
 ** TODO check all links
 
 * New content
+** TODO pin assignment picture
 ** TODO describe options
 *** General Layout /o
 - staggered pads
