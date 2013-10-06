@@ -1,4 +1,5 @@
 ---
 layout: redirect
+title: Kit 1 Gateway
 location: https://github.com/mchck/mchck/wiki/Prototype-Kit-1-Hackers-Guide
 ---
