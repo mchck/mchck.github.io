@@ -1,0 +1,72 @@
+---
+layout: post
+title: "MC HCK Options: Power Supply"
+date: "2013-10-16 14:04:32 +0200"
+author: "Simon Schubert"
+published: true
+---
+
+[[/images/options-power-lead.jpg]]
+
+The MCU used on the MC HCK already contains a 3.3V linear regulator
+that allows operating from the 5V that are provided by USB.  But not
+every MC HCK will always be connected to USB -- we have several power
+supply options to cover these cases.
+
+At the heart of the additional power supply options is a 3-way voltage
+regulator footprint that can host an LDO, a step-down converter, and a
+step-up converter.
+
+#+HTML: <!-- more -->
+
+A part of this 3-way regulator is the dual footprint of the output
+inductor /L1/: depending on the regulator setup used, either the left
+or the right side get populated.  All of these options require
+breaking the trace in /D3/, which by default bridges /VRAW/ to the 5V
+from USB.
+
+** Linear Regulator: up to 16V
+[[/images/options-power-ldo.jpg]]
+
+This one uses a [[http://www.micrel.com/_PDF/mic5205.pdf][Micrel/Exar 5205 SOT-23-5 linear regulator]] that can
+operate at up to 16V.  It runs at a low idle current of 100µA.
+
+*** Build
+- D3 :: break trace
+- U4 :: SPX5205
+- L1 /right/ :: 0R SMT jumper
+- C11, C12 :: 4.7µF, 16V, 2012 chip capacitor
+
+** Step-Down Converter
+[[/images/options-power-buck.jpg]]
+
+The [[http://www.ti.com/lit/ds/symlink/lm3670.pdf][National/Texas Instruments LM3670 step-down converter]] in SOT-23-5
+will operate at up to 5.5V at very low idle current of 15µA in
+low-load PFM mode.  This configuration is great for using a single
+LiPo cell or three AAA batteries - it should reach efficiency of over
+90% for 1mA load at 3.7V.
+
+*** Build
+- D3 :: break trace
+- SJ5 :: bridge
+- U4 :: LM3670MF
+- L1 /right/ :: 4.7µH, 200mA, 2012 chip inductor
+- C11, C12 :: 10µF, 6.3V, 2012 chip capacitor
+
+** Step-Up Converter
+[[/images/options-power-boost.jpg]]
+
+The [[http://www.ti.com/lit/ds/symlink/tps61097-33.pdf][Texas Instruments TPS61097]] or [[http://datasheets.maximintegrated.com/en/ds/MAX1722-MAX1724.pdf][Maxim MAX1724]] SOT-23-5 step-up
+converter will work down to 0.9V, at only 5µA idle current.  This
+setup is ideal for operation off one or two alkaline batteries.
+
+Even though the MC HCK itself can operate directly from a single
+Lithium coin cell, auxiliary parts might require a higher voltage;
+this power option is also useful for these cases.
+
+*** Build
+- D3 :: break trace
+- SJ5 :: bridge
+- U4 :: TPS61097
+- L1 /left/ :: 4.7µH, 200mA, 2012 chip inductor
+- C11, C12 :: 10µF, 6.3V, 2012 chip capacitor

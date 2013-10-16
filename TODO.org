@@ -15,6 +15,26 @@
   - pack as much functionality as possible
 - mounting hole
 
+**** General Layout /o and Layout Goals
+***** Staggered Pads
+This design idea comes from [[https://www.sparkfun.com/tutorials/114][Pete at SparkFun]].  Putting the pads
+slightly offset of center allows a light friction lock, which
+simplifies soldering of pin headers.
+
+
+***** Mounting Hole
+Perfect to bolt down your MC HCK with a M3 (#4 or #5) screw; enough
+bottom side clearance to use a hex standoff.  Or just string a thread
+through it and hang it off somewhere.
+
+***** Layout Goals
+- Home solderable :: Use TQFP instead of QFN, use 1610 parts, slightly
+     enlarged pads
+- Design rules :: can be produced by Chinese budget PCB fabs
+- Good layout practice :: short ground loops, quiet analog section
+
+
+
 *** Power options
 - 3-way voltage regulator
   - linear
