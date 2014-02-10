@@ -19,7 +19,7 @@ All required and optional parts are listed in the [[https://github.com/mchck/mch
 go over how to get the required ones.
 
 *** PCB
-The MC HCK boards can easily be ordered from [[http://www.seeedstudio.com/depot/fusion-pcb-service-2-layers-p-835.html][the]] [[http://imall.iteadstudio.com/open-pcb/pcb-prototyping/im120418001.html][usual]] [[http://www.hackvana.com/store/][suspects]] in
+The MC HCK boards can easily be ordered from the [[http://imall.iteadstudio.com/open-pcb/pcb-prototyping/im120418001.html][usual]] [[http://www.seeedstudio.com/depot/fusion-pcb-service-2-layers-p-835.html][suspects]] in
 China.  Just download the [[https://github.com/mchck/mchck-board/tree/fab][fabrication gerbers]] and attach them to your
 order; usually you will have to create a zip file.  Now wait 10 days
 or so until your PCBs arrive. /Cost: $10 + shipping for 10 boards/
